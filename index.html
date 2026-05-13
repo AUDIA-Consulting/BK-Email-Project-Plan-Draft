@@ -101,6 +101,20 @@
       letter-spacing: 0.03em;
       text-wrap: balance;
     }
+    .hero-title-top {
+      display: inline-block;
+      margin: 0 0 12px;
+      padding: 10px 14px 9px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(215, 189, 138, 0.24), rgba(215, 189, 138, 0.1));
+      border: 1px solid rgba(215, 189, 138, 0.45);
+      color: #fff4d8;
+      font-size: 1.02em;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    }
+    .hero-title-line {
+      display: block;
+    }
     .hero-kicker {
       margin: 0 0 12px;
       font-family: "Roboto Mono", monospace;
@@ -358,6 +372,9 @@
       .hero h1 {
         font-size: 1.8rem;
       }
+      .hero-title-top {
+        margin-bottom: 10px;
+      }
     }
   </style>
 </head>
@@ -367,7 +384,7 @@
       <div class="hero-layout">
         <div class="hero-copy">
           <div class="eyebrow">Women’s Collegiate Gymnastics Association | Collegiate Gymnastics Growth Initiative</div>
-          <h1>Texas State University Championship-Caliber Women’s&nbsp;Gymnastics Program Launch</h1>
+          <h1><span class="hero-title-top">Texas State University</span><span class="hero-title-line">Championship-Caliber Women’s</span><span class="hero-title-line">Gymnastics Program Launch</span></h1>
           <p class="hero-kicker">Prepared for Texas State senior leadership as a recommendation from the Women’s Collegiate Gymnastics Association and the Collegiate Gymnastics Growth Initiative.</p>
           <p>
             Texas State has a first-mover opportunity in the most talent-rich state in the country. This roadmap shows the funding sequence required to convert that opportunity into a sustainable Division I launch: invest early in the head coach and first assistant, fund portal-driven recruiting before the first competition cycle, and phase facilities in a way that supports roster construction instead of delaying it.
@@ -397,7 +414,7 @@
       </div>
       <div class="summary-card">
         <div class="label">Steady-State Operations</div>
-        <div class="value">$1,766,600</div>
+        <div class="value">$1,746,600</div>
         <div class="sub">Steady-state annual operating view with the revised staffing structure.</div>
       </div>
     </section>
@@ -438,12 +455,12 @@
         
             <tr>
               <td class="item">Head coach</td>
+              <td class="num">$7,292</td>
               <td class="num">$175,000</td>
               <td class="num">$175,000</td>
               <td class="num">$175,000</td>
               <td class="num">$175,000</td>
-              <td class="num">$175,000</td>
-              <td class="note">First market-entry hire. In year one, the right head coach opens doors in talent acquisition, donor engagement, MediaTour, fundraising, and statewide credibility. Leadership should keep flexibility to stretch toward about $225K for the right unexpected opportunity.</td>
+              <td class="note">FY2025-26 shows only a two-week prorated placeholder because the search begins June 1 and a full hire before July 1 is unlikely. In year one, the right head coach opens doors in talent acquisition, donor engagement, MediaTour, fundraising, and statewide credibility. Leadership should keep flexibility to stretch toward about $225K for the right unexpected opportunity.</td>
             </tr>
             
             <tr>
@@ -512,8 +529,8 @@
               <td class="num">$20,000</td>
               <td class="num">$40,000</td>
               <td class="num">$40,000</td>
-              <td class="num">$50,000</td>
-              <td class="note">Leotards are a real competitive and brand category in women’s gymnastics, not a throwaway uniform line. Recommended phasing is $20K in FY2026-27, $40K in FY2027-28 and FY2028-29, then $50K in FY2029-30, with sponsorships or product credits helping offset cost over time.</td>
+              <td class="num">$30,000</td>
+              <td class="note">Leotards are a real competitive and brand category in women’s gymnastics, not a throwaway uniform line. Recommended phasing is $20K in FY2026-27, $40K in FY2027-28 and FY2028-29, then $30K in FY2029-30, with sponsorships or product credits helping offset cost over time.</td>
             </tr>
             
             <tr>
@@ -528,11 +545,11 @@
             
         <tr class="overall-total">
           <td>Recommended Budget by Fiscal Year</td>
-          <td class="num">$175,000</td>
+          <td class="num">$7,292</td>
           <td class="num">$870,000</td>
           <td class="num">$4,095,000</td>
           <td class="num">$1,155,000</td>
-          <td class="num">$665,000</td>
+          <td class="num">$645,000</td>
           <td></td>
         </tr>
         
@@ -566,7 +583,7 @@
                   <td class="num">$175,000</td>
                   <td class="center">1</td>
                   <td class="num total-col">$175,000</td>
-                  <td class="note">FY2025-26. Foundational market-entry hire with credibility across Texas clubs, media, and donors. Year one should include visible MediaTour and fundraising responsibility to establish the program early. The program should be willing to stretch toward roughly $225,000 if an unexpected elite candidate becomes available.</td>
+                  <td class="note">Annualized salary shown at $175,000. For FY2025-26 planning, the roadmap uses only a small two-week prorated placeholder before July 1, since a June 1 search start makes a full-month hire unlikely. Foundational market-entry hire with credibility across Texas clubs, media, and donors. Year one should include visible MediaTour and fundraising responsibility to establish the program early. The program should be willing to stretch toward roughly $225,000 if an unexpected elite candidate becomes available.</td>
                 </tr>
                 
 
@@ -845,10 +862,10 @@
 
                 <tr>
                   <td class="item">Leotards</td>
-                  <td class="num">$50,000</td>
+                  <td class="num">$30,000</td>
                   <td class="center">1</td>
-                  <td class="num total-col">$50,000</td>
-                  <td class="note">Steady-state view shown here at $50,000. Recommended phasing is $20,000 in FY2026-27, $40,000 in FY2027-28 and FY2028-29, then $50,000 in FY2029-30. Leotards are a meaningful high-performance item in women’s gymnastics, and sponsorship from leotard companies or corporate partners could help subsidize this line.</td>
+                  <td class="num total-col">$30,000</td>
+                  <td class="note">Current out-year view shown here at $30,000. Recommended phasing is $20,000 in FY2026-27, $40,000 in FY2027-28 and FY2028-29, then $30,000 in FY2029-30. Leotards are a meaningful high-performance item in women’s gymnastics, and sponsorship from leotard companies or corporate partners could help subsidize this line.</td>
                 </tr>
                 
 
@@ -872,7 +889,7 @@
 
             <tr class="subtotal-row">
               <td colspan="3">Subtotal: Equipment/uniforms</td>
-              <td class="num">$121,900</td>
+              <td class="num">$101,900</td>
               <td></td>
             </tr>
             
@@ -1367,7 +1384,7 @@
             
         <tr class="overall-total">
           <td colspan="3">Total Annual Operating Budget</td>
-          <td class="num">$1,766,600</td>
+          <td class="num">$1,746,600</td>
           <td></td>
         </tr>
       </tbody>
