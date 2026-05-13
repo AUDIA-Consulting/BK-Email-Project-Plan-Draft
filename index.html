@@ -1,1549 +1,1484 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Texas State Recommended Budget Roadmap</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap');
-    :root {
-      --maroon: #501214;
-      --gold: #8d734a;
-      --metallic-gold: #d7bd8a;
-      --ink: #201918;
-      --bg: #f5f0e8;
-      --panel: #fffdfa;
-      --line: #d8c9b6;
-      --soft: #f1e6d7;
-      --soft-gold: #f7efe0;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: "Public Sans", Arial, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(215, 189, 138, 0.24), transparent 26%),
-        linear-gradient(180deg, #f8f3ec, #eee4d5);
-      color: var(--ink);
-    }
-    .wrap {
-      max-width: 1360px;
-      margin: 0 auto;
-      padding: 28px 20px 60px;
-    }
-    .hero {
-      background:
-        linear-gradient(135deg, rgba(80, 18, 20, 0.98), rgba(80, 18, 20, 0.94)),
-        linear-gradient(120deg, rgba(215, 189, 138, 0.22), transparent 55%);
-      color: white;
-      border: 1px solid rgba(215, 189, 138, 0.3);
-      border-radius: 24px;
-      padding: 30px 32px;
-      box-shadow: 0 24px 60px rgba(54, 17, 17, 0.2);
-      margin-bottom: 22px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.45fr) 300px;
-      gap: 28px;
-      align-items: start;
-      position: relative;
-      z-index: 1;
-    }
-    .hero-copy {
-      min-width: 0;
-    }
-    .hero-brand {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px 18px;
-      border-radius: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(251,247,240,0.98));
-      border: 1px solid rgba(215, 189, 138, 0.5);
-      box-shadow: 0 18px 34px rgba(28, 11, 12, 0.16);
-      min-height: 164px;
-    }
-    .hero-brand img {
-      display: block;
-      width: 100%;
-      max-width: 250px;
-      height: auto;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0 0;
-      height: 7px;
-      background: linear-gradient(90deg, var(--metallic-gold), var(--gold));
-    }
-    .eyebrow {
-      display: inline-block;
-      font-family: "Roboto Mono", monospace;
-      letter-spacing: 0.14em;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 12px;
-      padding: 6px 10px;
-      border: 1px solid rgba(215, 189, 138, 0.35);
-      border-radius: 999px;
-      background: rgba(215, 189, 138, 0.08);
-    }
-    .hero h1 {
-      margin: 0 0 10px;
-      font-family: "Halis Grotesque", "Avenir Next Condensed", "Arial Narrow", "Public Sans", sans-serif;
-      font-size: 2.3rem;
-      line-height: 1.05;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      text-wrap: balance;
-    }
-    .hero-title-top {
-      display: inline-block;
-      margin: 0 0 12px;
-      padding: 10px 14px 9px;
-      border-radius: 14px;
-      background: linear-gradient(180deg, rgba(215, 189, 138, 0.24), rgba(215, 189, 138, 0.1));
-      border: 1px solid rgba(215, 189, 138, 0.45);
-      color: #fff4d8;
-      font-size: 1.02em;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-    }
-    .hero-title-line {
-      display: block;
-    }
-    .hero-kicker {
-      margin: 0 0 12px;
-      font-family: "Roboto Mono", monospace;
-      font-size: 0.82rem;
-      line-height: 1.6;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.72);
-      text-wrap: pretty;
-    }
-    .hero p {
-      margin: 0;
-      max-width: 980px;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.92);
-      font-size: 1.03rem;
-      text-wrap: pretty;
-    }
-    .summary {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-      margin-bottom: 18px;
-    }
-    .summary-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px 20px;
-      box-shadow: 0 10px 26px rgba(49, 34, 26, 0.05);
-      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease;
-    }
-    .summary-card .label {
-      font-family: "Roboto Mono", monospace;
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #7a6464;
-      margin-bottom: 8px;
-    }
-    .summary-card .value {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--maroon);
-      transition: color 180ms ease;
-    }
-    .summary-card .sub {
-      margin-top: 8px;
-      color: #6d5e5e;
-      font-size: 0.88rem;
-      line-height: 1.45;
-      text-wrap: pretty;
-      transition: color 180ms ease;
-    }
-    .summary-card:hover {
-      transform: translateY(-4px);
-      background: linear-gradient(180deg, var(--maroon), #6a1a1d);
-      border-color: rgba(215, 189, 138, 0.85);
-      box-shadow: 0 18px 34px rgba(80, 18, 20, 0.2);
-    }
-    .summary-card:hover .label,
-    .summary-card:hover .sub {
-      color: rgba(255,255,255,0.88);
-    }
-    .summary-card:hover .value {
-      color: #fff7e6;
-    }
-    .decision-strip {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin: 2px 0 18px;
-    }
-    .decision-card {
-      background: linear-gradient(180deg, #fffdfa, #f9f1e7);
-      border: 1px solid rgba(141, 115, 74, 0.24);
-      border-radius: 18px;
-      padding: 16px 18px;
-      box-shadow: 0 10px 22px rgba(80, 18, 20, 0.04);
-      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
-    }
-    .decision-card .label {
-      font-family: "Roboto Mono", monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #7a6464;
-      margin-bottom: 8px;
-    }
-    .decision-card p {
-      margin: 0;
-      color: #4f4343;
-      font-size: 0.92rem;
-      line-height: 1.55;
-      text-wrap: pretty;
-      transition: color 180ms ease;
-    }
-    .decision-card:hover {
-      transform: translateY(-4px);
-      background: linear-gradient(180deg, #f7efe0, #ead7b8);
-      border-color: rgba(80, 18, 20, 0.35);
-      box-shadow: 0 18px 34px rgba(80, 18, 20, 0.14);
-    }
-    .decision-card:hover .label {
-      color: var(--maroon);
-    }
-    .decision-card:hover p {
-      color: #2f2121;
-    }
-    .section-title {
-      margin: 24px 0 10px;
-      font-family: "Halis Grotesque", "Avenir Next Condensed", "Arial Narrow", "Public Sans", sans-serif;
-      font-size: 1.35rem;
-      color: var(--maroon);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      text-wrap: balance;
-    }
-    .section-intro {
-      margin: 0 0 14px;
-      color: #5a4b4b;
-      line-height: 1.55;
-      max-width: 1050px;
-      text-wrap: pretty;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 10px 26px rgba(49, 34, 26, 0.06);
-      margin-bottom: 22px;
-      transition: box-shadow 180ms ease, border-color 180ms ease, transform 180ms ease;
-    }
-    table:hover {
-      transform: translateY(-2px);
-      border-color: rgba(141, 115, 74, 0.42);
-      box-shadow: 0 18px 36px rgba(80, 18, 20, 0.12);
-    }
-    th, td {
-      padding: 12px 14px;
-      border-bottom: 1px solid var(--line);
-      vertical-align: top;
-      font-size: 0.95rem;
-    }
-    thead th {
-      background: var(--maroon);
-      color: white;
-      text-align: left;
-      font-family: "Roboto Mono", monospace;
-      font-weight: 700;
-    }
-    .roadmap thead th {
-      font-size: 0.88rem;
-      letter-spacing: 0.04em;
-    }
-    .roadmap tbody tr:nth-child(even) td {
-      background: #fff9ef;
-    }
-    .section-row td {
-      background: var(--soft);
-      color: var(--maroon);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      font-family: "Roboto Mono", monospace;
-    }
-    .subtotal-row td {
-      background: var(--soft-gold);
-      font-weight: 700;
-    }
-    .num {
-      text-align: right;
-      white-space: nowrap;
-      font-variant-numeric: tabular-nums;
-      font-family: "Roboto Mono", monospace;
-    }
-    .center {
-      text-align: center;
-      font-family: "Roboto Mono", monospace;
-    }
-    .total-col {
-      font-weight: 700;
-    }
-    .item {
-      font-weight: 700;
-      min-width: 220px;
-    }
-    .note {
-      color: #4f4343;
-      line-height: 1.48;
-      text-wrap: pretty;
-    }
-    .overall-total td {
-      background: var(--maroon);
-      color: white;
-      font-weight: 700;
-      border-bottom: none;
-      font-size: 0.98rem;
-      font-family: "Roboto Mono", monospace;
-    }
-    .callouts {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 6px;
-    }
-    .callout {
-      background: linear-gradient(180deg, #fbf3df, #f7edd7);
-      border: 1px solid rgba(141, 115, 74, 0.28);
-      border-radius: 16px;
-      padding: 16px 18px;
-      line-height: 1.55;
-      color: #5b4530;
-      box-shadow: 0 10px 20px rgba(80, 18, 20, 0.05);
-      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
-    }
-    .callout:hover {
-      transform: translateY(-3px);
-      background: linear-gradient(180deg, #501214, #6a1a1d);
-      border-color: rgba(215, 189, 138, 0.75);
-      color: rgba(255,255,255,0.92);
-      box-shadow: 0 18px 34px rgba(80, 18, 20, 0.2);
-    }
-    .callout:hover strong {
-      color: #fff4d8;
-    }
-    @media (max-width: 1100px) {
-      .hero-layout {
-        grid-template-columns: 1fr;
-      }
-      .hero-brand {
-        max-width: 360px;
-      }
-      .summary {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .decision-strip {
-        grid-template-columns: 1fr;
-      }
-      .callouts {
-        grid-template-columns: 1fr;
-      }
-    }
-    @media (max-width: 820px) {
-      .summary {
-        grid-template-columns: 1fr;
-      }
-      th, td {
-        padding: 10px;
-        font-size: 0.9rem;
-      }
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-      .hero-title-top {
-        margin-bottom: 10px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email Solution &amp; Project Plan (Draft) | Baker Katz</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bk-dark: #1a1a2e;
+    --bk-darker: #0f0f1e;
+    --bk-blue: #9fc5e8;
+    --bk-blue-bright: #d4eaff;
+    --bk-blue-dim: rgba(159,197,232,0.15);
+    --bk-gold: #c9a227;
+    --bk-gold-bright: #f0d35a;
+    --bk-gold-dim: rgba(201,162,39,0.12);
+    --bk-red: #b10202;
+    --bk-white: #f8f9fa;
+    --bk-grey: #d9d9d9;
+    --bk-text: #e0e0e0;
+    --bk-muted: #8a8a9a;
+    --bk-hover-bg: rgba(159,197,232,0.14);
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Instrument Serif', Georgia, serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; font-size:18px; }
+  body { font-family: var(--font-sans); background: var(--bk-darker); color: var(--bk-text); line-height:1.7; }
+
+  section { padding:6rem 3rem; max-width:1100px; margin:0 auto; }
+  .section-label {
+    font-size:.78rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--bk-blue); margin-bottom:.85rem; display:block;
+  }
+  h1 {
+    font-family:var(--font-serif); font-size:clamp(2.8rem,5.5vw,4.2rem);
+    color:#fff; line-height:1.08; margin-bottom:1.5rem; font-weight:400;
+  }
+  h1 em, h2 em { font-style:italic; color:var(--bk-blue); }
+  h2 {
+    font-family:var(--font-serif); font-size:clamp(2rem,3.8vw,2.8rem);
+    color:#fff; line-height:1.12; margin-bottom:1.2rem; font-weight:400;
+  }
+  h3 { font-size:1.25rem; font-weight:600; color:#fff; margin-bottom:.5rem; }
+  h4 { font-size:1.05rem; font-weight:600; color:#fff; margin-bottom:.4rem; }
+  p { color:var(--bk-text); max-width:760px; font-size:1.02rem; margin-bottom:.85rem; }
+  .lead { font-size:1.18rem; color:var(--bk-muted); max-width:720px; }
+
+  /* DRAFT STAMP - prominent design element */
+  .draft-stamp {
+    position:relative;
+    display:block;
+    background:linear-gradient(135deg, rgba(201,162,39,0.12), rgba(201,162,39,0.04));
+    border:1px solid rgba(201,162,39,0.32);
+    border-left:5px solid var(--bk-gold-bright);
+    border-radius:14px;
+    padding:1.85rem 2.25rem;
+    margin-bottom:2.75rem;
+    overflow:hidden;
+    max-width:760px;
+  }
+  .draft-stamp::before {
+    content:'DRAFT';
+    position:absolute; right:-1.2rem; top:50%;
+    transform:translateY(-50%) rotate(-14deg);
+    font-family:var(--font-serif);
+    font-size:7.5rem; font-weight:400;
+    color:rgba(201,162,39,0.07);
+    letter-spacing:.04em;
+    pointer-events:none;
+    line-height:1;
+    white-space:nowrap;
+  }
+  .draft-stamp .stamp-eyebrow {
+    display:inline-flex; align-items:center; gap:.6rem;
+    font-size:.72rem; font-weight:600;
+    letter-spacing:.22em; text-transform:uppercase;
+    color:var(--bk-gold-bright);
+    margin-bottom:.9rem;
+    position:relative;
+  }
+  .draft-stamp .stamp-dot {
+    width:9px; height:9px; border-radius:50%;
+    background:var(--bk-gold-bright);
+    box-shadow:0 0 12px rgba(240,211,90,0.7);
+    animation: stamp-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes stamp-pulse {
+    0%, 100% { opacity:1; transform:scale(1); }
+    50% { opacity:.45; transform:scale(.78); }
+  }
+  .draft-stamp .stamp-title {
+    font-family:var(--font-serif); font-style:italic;
+    font-size:clamp(2rem, 3.6vw, 2.7rem);
+    color:var(--bk-gold-bright);
+    font-weight:400; line-height:1.05;
+    margin-bottom:1rem;
+    position:relative;
+  }
+  .draft-stamp .stamp-meta {
+    display:flex; align-items:center; gap:1rem;
+    font-size:.74rem; font-weight:600;
+    letter-spacing:.22em; text-transform:uppercase;
+    color:var(--bk-gold);
+    position:relative;
+  }
+  .draft-stamp .stamp-meta-rule {
+    width:34px; height:1px;
+    background:rgba(201,162,39,0.45);
+  }
+
+  .hero {
+    min-height:90vh; display:flex; flex-direction:column; justify-content:center;
+    padding-top:5rem; position:relative; overflow:hidden;
+  }
+  .hero::before {
+    content:''; position:absolute; top:-30%; right:-15%; width:760px; height:760px;
+    background:radial-gradient(circle, rgba(159,197,232,0.07) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .hero::after {
+    content:''; position:absolute; bottom:-20%; left:-10%; width:520px; height:520px;
+    background:radial-gradient(circle, rgba(201,162,39,0.04) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .hero .meta-row {
+    display:flex; gap:3rem; flex-wrap:wrap;
+    margin-top:2.5rem; padding-top:1.75rem;
+    border-top:1px solid rgba(159,197,232,0.1);
+  }
+  .meta-item .meta-label {
+    font-size:.7rem; font-weight:500; text-transform:uppercase;
+    letter-spacing:.16em; color:var(--bk-muted); margin-bottom:.35rem;
+  }
+  .meta-item .meta-value {
+    font-family:var(--font-serif); font-size:1.05rem; color:#fff;
+  }
+
+  hr.divider { border:none; border-top:1px solid rgba(159,197,232,0.08); margin:0 3rem; }
+
+  /* THREE-PRONGED APPROACH */
+  .approach-grid {
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:1.25rem; margin-top:2rem;
+  }
+  .approach-card {
+    background:var(--bk-dark);
+    border:1px solid rgba(159,197,232,0.1);
+    border-radius:14px;
+    padding:1.75rem;
+    cursor:default;
+    transition:background .3s ease, border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+  }
+  .approach-card .approach-num {
+    font-family:var(--font-serif); font-size:1.6rem; color:var(--bk-gold);
+    line-height:1; font-weight:400; margin-bottom:.5rem;
+    transition:color .3s ease;
+  }
+  .approach-card h4 {
+    font-family:var(--font-serif); font-weight:400; font-size:1.3rem; color:#fff;
+    margin-bottom:.6rem;
+    transition:color .3s ease;
+  }
+  .approach-card p {
+    font-size:.95rem; color:var(--bk-muted); margin-bottom:0; line-height:1.65;
+    transition:color .3s ease;
+  }
+  /* Hover: reverse the palette - bright background, dark text */
+  .approach-card:hover {
+    background:var(--bk-blue-bright);
+    border-color:var(--bk-blue-bright);
+    transform:translateY(-3px);
+    box-shadow:0 14px 36px rgba(159,197,232,0.18);
+  }
+  .approach-card:hover .approach-num { color:var(--bk-darker); }
+  .approach-card:hover h4 { color:var(--bk-darker); }
+  .approach-card:hover p { color:rgba(15,15,30,0.78); }
+
+  /* THE STACK */
+  .stack-grid {
+    display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-top:2rem;
+  }
+  .stack-card {
+    background:var(--bk-dark);
+    border:1px solid rgba(159,197,232,0.08);
+    border-radius:14px;
+    padding:1.75rem;
+    transition:background .3s ease, border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+  }
+  .stack-card .stack-tag {
+    display:inline-block; font-size:.7rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+    padding:.25rem .65rem; border-radius:100px;
+    background:var(--bk-blue-dim); color:var(--bk-blue); border:1px solid rgba(159,197,232,0.2);
+    margin-bottom:.85rem;
+    transition:background .3s ease, color .3s ease, border-color .3s ease;
+  }
+  .stack-card .stack-tag.gold {
+    background:var(--bk-gold-dim); color:var(--bk-gold); border-color:rgba(201,162,39,0.25);
+  }
+  .stack-card h4 {
+    font-family:var(--font-serif); font-weight:400; font-size:1.3rem; color:#fff;
+    margin-bottom:.5rem;
+    transition:color .3s ease;
+  }
+  .stack-card p {
+    font-size:.95rem; color:var(--bk-muted); margin-bottom:0; line-height:1.6;
+    transition:color .3s ease;
+  }
+  /* Hover: reverse palette - bright blue fill, dark text */
+  .stack-card:hover {
+    background:var(--bk-blue-bright);
+    border-color:var(--bk-blue-bright);
+    transform:translateY(-3px);
+    box-shadow:0 14px 36px rgba(159,197,232,0.18);
+  }
+  .stack-card:hover h4 { color:var(--bk-darker); }
+  .stack-card:hover p { color:rgba(15,15,30,0.78); }
+  .stack-card:hover .stack-tag {
+    background:rgba(15,15,30,0.12); color:var(--bk-darker); border-color:rgba(15,15,30,0.25);
+  }
+
+  /* COPILOT FOUNDATION CARD (thin, full-width below the 2x2) */
+  .stack-foundation {
+    grid-column: 1 / -1;
+    background:linear-gradient(180deg, rgba(201,162,39,0.08), rgba(201,162,39,0.04));
+    border:1px solid rgba(201,162,39,0.3);
+    border-radius:14px;
+    padding:1.4rem 1.75rem;
+    display:flex; align-items:center; gap:1.5rem;
+    transition:background .3s ease, border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+  }
+  .stack-foundation .foundation-left {
+    display:flex; flex-direction:column; gap:.4rem; min-width:230px;
+  }
+  .stack-foundation .foundation-right { flex:1; }
+  .stack-foundation h4 {
+    font-family:var(--font-serif); font-weight:400; font-size:1.3rem; color:#fff;
+    margin-bottom:0;
+    transition:color .3s ease;
+  }
+  .stack-foundation p {
+    font-size:.92rem; color:var(--bk-muted); margin-bottom:0; line-height:1.6;
+    transition:color .3s ease;
+  }
+  .stack-foundation .stack-tag {
+    display:inline-block; font-size:.7rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+    padding:.25rem .65rem; border-radius:100px;
+    background:var(--bk-gold-dim); color:var(--bk-gold); border:1px solid rgba(201,162,39,0.25);
+    align-self:flex-start;
+    transition:background .3s ease, color .3s ease, border-color .3s ease;
+  }
+  .stack-foundation .foundation-label {
+    font-size:.7rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--bk-gold); margin-top:.15rem;
+    transition:color .3s ease;
+  }
+  /* Hover: reverse palette - solid gold fill, dark text */
+  .stack-foundation:hover {
+    background:var(--bk-gold-bright);
+    border-color:var(--bk-gold-bright);
+    transform:translateY(-3px);
+    box-shadow:0 14px 36px rgba(201,162,39,0.22);
+  }
+  .stack-foundation:hover h4 { color:var(--bk-darker); }
+  .stack-foundation:hover p { color:rgba(15,15,30,0.82); }
+  .stack-foundation:hover .foundation-label { color:rgba(15,15,30,0.7); }
+  .stack-foundation:hover .stack-tag {
+    background:rgba(15,15,30,0.18); color:var(--bk-darker); border-color:rgba(15,15,30,0.3);
+  }
+
+  /* PRINCIPAL FLOW */
+  .principal-flow {
+    background:var(--bk-dark);
+    border:1px solid rgba(159,197,232,0.08);
+    border-radius:14px;
+    padding:2.5rem 2.25rem;
+    margin-top:1.5rem;
+  }
+  .principal-flow.gold-accent { border-color:rgba(201,162,39,0.18); }
+  .principal-flow .who {
+    font-size:.78rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--bk-blue); margin-bottom:.5rem;
+  }
+  .principal-flow.gold-accent .who { color:var(--bk-gold); }
+  .principal-flow h3 {
+    font-family:var(--font-serif); font-weight:400; font-size:1.7rem; color:#fff;
+    line-height:1.2; margin-bottom:.5rem;
+  }
+  .principal-flow .one-liner {
+    font-family:var(--font-serif); font-style:italic;
+    font-size:1.1rem; color:var(--bk-blue); margin-bottom:1.5rem;
+  }
+  .principal-flow.gold-accent .one-liner { color:var(--bk-gold-bright); }
+  .flow-steps { list-style:none; counter-reset: f; margin-top:1rem; }
+  .flow-steps li {
+    counter-increment: f;
+    position:relative; padding-left:3rem; padding-top:1rem; padding-bottom:1rem;
+    border-top:1px solid rgba(159,197,232,0.06);
+  }
+  .flow-steps li:first-child { border-top:none; }
+  .flow-steps li::before {
+    content: counter(f, decimal-leading-zero);
+    position:absolute; left:0; top:1.05rem;
+    font-family:var(--font-serif); font-size:1.3rem; color:var(--bk-gold);
+    font-weight:500;
+  }
+  .flow-steps li strong { color:#fff; font-weight:600; }
+  .flow-steps li p { font-size:.94rem; color:var(--bk-muted); margin:.3rem 0 0 0; line-height:1.6; }
+
+  /* SOP TILE */
+  .sop-grid {
+    display:grid; grid-template-columns:repeat(2, 1fr); gap:1.25rem; margin-top:2rem;
+  }
+  .sop-tile {
+    background:var(--bk-dark);
+    border:1px solid rgba(159,197,232,0.08);
+    border-radius:14px;
+    padding:1.75rem;
+    transition:background .3s ease, border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+    text-decoration:none; color:inherit; display:block;
+  }
+  .sop-tile .sop-num {
+    font-family:var(--font-serif); font-size:1.8rem; color:var(--bk-gold);
+    font-weight:400; line-height:1; margin-bottom:.75rem;
+    transition:color .3s ease;
+  }
+  .sop-tile h4 {
+    font-family:var(--font-serif); font-weight:400; font-size:1.2rem; color:#fff;
+    margin-bottom:.4rem; line-height:1.3;
+    transition:color .3s ease;
+  }
+  .sop-tile p {
+    font-size:.88rem; color:var(--bk-muted); margin-bottom:0; line-height:1.55;
+    transition:color .3s ease;
+  }
+  /* Hover: reverse palette - bright blue fill, dark text */
+  .sop-tile:hover {
+    background:var(--bk-blue-bright);
+    border-color:var(--bk-blue-bright);
+    transform:translateY(-3px);
+    box-shadow:0 14px 36px rgba(159,197,232,0.18);
+  }
+  .sop-tile:hover .sop-num { color:var(--bk-darker); }
+  .sop-tile:hover h4 { color:var(--bk-darker); }
+  .sop-tile:hover p { color:rgba(15,15,30,0.78); }
+
+  /* WEEKLY CHECK-IN CALLOUT */
+  .checkin-callout {
+    background:linear-gradient(135deg, rgba(159,197,232,0.08), rgba(201,162,39,0.05));
+    border:1px solid rgba(201,162,39,0.22);
+    border-radius:14px;
+    padding:2.25rem 2rem;
+    margin-top:1.5rem;
+  }
+  .checkin-callout .who {
+    font-size:.78rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--bk-gold); margin-bottom:.5rem;
+  }
+  .checkin-callout h3 {
+    font-family:var(--font-serif); font-weight:400; font-size:1.6rem; color:#fff;
+    line-height:1.2; margin-bottom:.6rem;
+  }
+  .checkin-callout .one-liner {
+    font-family:var(--font-serif); font-style:italic;
+    font-size:1.1rem; color:var(--bk-gold-bright); margin-bottom:1.5rem;
+  }
+  .checkin-grid {
+    display:grid; grid-template-columns:1fr 1fr; gap:1rem;
+    margin-bottom:1.25rem;
+  }
+  .checkin-slot {
+    background:rgba(15,15,30,0.6);
+    border:1px solid rgba(159,197,232,0.1);
+    border-radius:10px;
+    padding:1.1rem 1.25rem;
+  }
+  .checkin-slot .slot-time {
+    font-size:.7rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--bk-blue); margin-bottom:.35rem;
+  }
+  .checkin-slot .slot-who {
+    font-family:var(--font-serif); font-size:1.15rem; color:#fff;
+    margin-bottom:.2rem;
+  }
+  .checkin-slot .slot-fac { font-size:.85rem; color:var(--bk-muted); }
+  .checkin-callout .agenda { font-size:.95rem; color:var(--bk-text); margin-bottom:.6rem; }
+  .checkin-callout .closing-line { font-size:.95rem; color:var(--bk-muted); margin-bottom:0; }
+
+  /* PHASE BLOCK */
+  .phase {
+    background:var(--bk-dark);
+    border:1px solid rgba(159,197,232,0.08);
+    border-radius:14px;
+    padding:2rem 2rem;
+    margin-top:1.25rem;
+  }
+  .phase-header {
+    display:flex; align-items:baseline; justify-content:space-between;
+    flex-wrap:wrap; gap:1rem;
+    border-bottom:1px solid rgba(159,197,232,0.1);
+    padding-bottom:1rem; margin-bottom:1.25rem;
+  }
+  .phase-num {
+    font-family:var(--font-serif); font-size:1.8rem; color:var(--bk-gold);
+    line-height:1; font-weight:400;
+  }
+  .phase-name {
+    font-family:var(--font-serif); font-size:1.5rem; color:#fff;
+    font-weight:400; line-height:1.2;
+  }
+  .phase-name em { font-style:italic; color:var(--bk-blue); }
+  .phase-window {
+    font-size:.74rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--bk-muted);
+  }
+  .week-list { list-style:none; }
+  .week-list li {
+    display:grid; grid-template-columns:120px 1fr; gap:1.5rem;
+    padding:1rem 0;
+    border-bottom:1px solid rgba(159,197,232,0.06);
+  }
+  .week-list li:last-child { border-bottom:none; }
+  .week-num {
+    font-size:.75rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--bk-blue);
+    padding-top:.15rem;
+  }
+  .week-num small {
+    display:block; font-size:.68rem; color:var(--bk-muted);
+    font-weight:500; letter-spacing:.06em; text-transform:none;
+    margin-top:.2rem;
+  }
+  .week-content h5 {
+    font-family:var(--font-serif); font-size:1.1rem; color:#fff;
+    font-weight:400; margin-bottom:.35rem;
+  }
+  .week-content p {
+    font-size:.92rem; color:var(--bk-muted); line-height:1.6; margin-bottom:0;
+  }
+  .week-content .deliverable {
+    display:inline-block; margin-top:.45rem;
+    font-size:.72rem; font-weight:500;
+    color:var(--bk-gold-bright);
+    padding:.22rem .6rem;
+    background:var(--bk-gold-dim);
+    border:1px solid rgba(201,162,39,0.2);
+    border-radius:100px;
+  }
+
+  /* FAQ BOX */
+  .faq-box {
+    background:rgba(159,197,232,0.06);
+    border:1px solid rgba(159,197,232,0.18);
+    border-radius:12px;
+    padding:1.75rem 2rem;
+    margin-top:1.5rem;
+  }
+  .faq-box .faq-label {
+    font-size:.7rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--bk-blue); margin-bottom:.6rem;
+  }
+  .faq-box h4 {
+    font-family:var(--font-serif); font-weight:400; font-size:1.25rem; color:#fff;
+    margin-bottom:.7rem; line-height:1.35;
+  }
+  .faq-box p { color:var(--bk-text); font-size:.95rem; margin-bottom:.6rem; }
+  .faq-box p:last-child { margin-bottom:0; }
+
+  /* ASK */
+  .ask-block {
+    background:linear-gradient(135deg, rgba(159,197,232,0.06), rgba(201,162,39,0.04));
+    border:1px solid rgba(201,162,39,0.2);
+    border-radius:14px;
+    padding:2.5rem 2.25rem;
+    margin-top:2rem;
+  }
+  .ask-block h3 {
+    font-family:var(--font-serif); font-weight:400; font-size:1.5rem;
+    color:#fff; margin-bottom:1rem;
+  }
+  .ask-block > p { text-wrap: balance; max-width:none; }
+  .ask-block ol { list-style:none; counter-reset: ask; margin-top:1.25rem; }
+  .ask-block ol li {
+    counter-increment: ask;
+    position:relative;
+    padding-left:2.75rem;
+    margin-bottom:1rem;
+    font-size:1rem;
+    line-height:1.6;
+    color:var(--bk-text);
+    text-wrap: balance;
+  }
+  .ask-block ol li::before {
+    content: counter(ask, decimal-leading-zero);
+    position:absolute; left:0; top:.05rem;
+    font-family:var(--font-serif); font-size:1.3rem;
+    color:var(--bk-gold); font-weight:500;
+  }
+
+  footer {
+    text-align:center; padding:3rem;
+    font-size:.78rem; letter-spacing:.04em;
+    color:var(--bk-muted);
+    border-top:1px solid rgba(159,197,232,0.06);
+  }
+
+  /* ============================================
+     OUTLOOK SCREEN - authentic Microsoft mockup
+     framed inside a Baker Katz dark container
+     ============================================ */
+  .outlook-frame {
+    background:linear-gradient(180deg, rgba(15,15,30,0.6), rgba(15,15,30,0.3));
+    border:1px solid rgba(159,197,232,0.15);
+    border-radius:18px;
+    padding:2rem;
+    margin-top:1.5rem;
+    box-shadow:0 24px 60px rgba(0,0,0,0.45);
+    position:relative;
+  }
+  .outlook-frame::before {
+    content:'';
+    position:absolute; top:14px; left:50%;
+    transform:translateX(-50%);
+    width:60px; height:5px; border-radius:100px;
+    background:rgba(159,197,232,0.18);
+  }
+  .outlook-frame .frame-caption {
+    display:flex; align-items:center; gap:.6rem;
+    font-size:.7rem; font-weight:600;
+    letter-spacing:.18em; text-transform:uppercase;
+    color:var(--bk-gold);
+    margin-bottom:1.5rem; padding-top:.5rem;
+    justify-content:center;
+  }
+  .outlook-frame .frame-caption .dot {
+    width:6px; height:6px; border-radius:50%;
+    background:var(--bk-gold-bright);
+  }
+  .outlook-frame .frame-footer-note {
+    margin-top:1.25rem;
+    padding:1rem 1.25rem;
+    background:rgba(159,197,232,0.05);
+    border:1px solid rgba(159,197,232,0.12);
+    border-radius:10px;
+    font-size:.88rem;
+    color:var(--bk-text);
+    line-height:1.6;
+  }
+  .outlook-frame .frame-footer-note strong { color:#fff; font-weight:600; }
+
+  /* All Microsoft mockup styling is scoped to .outlook-screen
+     so it does not bleed into the rest of the proposal */
+  .outlook-screen {
+    font-family:'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color:#201f1e;
+    line-height:1.5;
+    max-width:760px;
+    margin:0 auto;
+  }
+  .outlook-screen * { box-sizing:border-box; }
+
+  .outlook-screen .mockup-label {
+    background:#fff4e5;
+    border:1px solid #f7c474;
+    border-radius:8px;
+    padding:1rem 1.25rem;
+    font-size:.88rem;
+    color:#8a5a00;
+    margin-bottom:1.5rem;
+  }
+  .outlook-screen .mockup-label strong { color:#5a3a00; }
+
+  .outlook-screen .copilot-panel {
+    background:#ffffff;
+    border-radius:12px;
+    box-shadow:0 1px 3px rgba(0,0,0,0.04), 0 12px 32px rgba(0,0,0,0.18);
+    overflow:hidden;
+  }
+  .outlook-screen .copilot-header {
+    padding:1.5rem 1.75rem 1.25rem;
+    background:linear-gradient(135deg, #f3f0ff 0%, #e8f1ff 100%);
+    border-bottom:1px solid #e1dfdd;
+  }
+  .outlook-screen .copilot-brand {
+    display:flex; align-items:center; gap:.5rem;
+    margin-bottom:.85rem;
+  }
+  .outlook-screen .copilot-icon {
+    width:24px; height:24px;
+    background:linear-gradient(135deg, #d04ed8 0%, #8662eb 50%, #2a9df4 100%);
+    border-radius:6px;
+    display:flex; align-items:center; justify-content:center;
+    color:white; font-size:14px;
+    box-shadow:0 2px 6px rgba(134, 98, 235, 0.3);
+  }
+  .outlook-screen .copilot-label {
+    font-size:.78rem; font-weight:600;
+    color:#605e5c; letter-spacing:.01em;
+  }
+  .outlook-screen .copilot-title {
+    font-size:1.45rem; font-weight:600;
+    color:#201f1e; margin-bottom:.35rem;
+    font-family:'Segoe UI', 'Inter', sans-serif;
+  }
+  .outlook-screen .copilot-subtitle {
+    font-size:.88rem; color:#605e5c;
+  }
+  .outlook-screen .copilot-body { padding:1.5rem 1.75rem .5rem; }
+  .outlook-screen .copilot-section { margin-bottom:1.5rem; }
+  .outlook-screen .copilot-section-header {
+    display:flex; align-items:center; gap:.55rem;
+    margin-bottom:.85rem;
+    padding-bottom:.55rem;
+    border-bottom:1px solid #f3f2f1;
+  }
+  .outlook-screen .copilot-tag {
+    font-size:.7rem; font-weight:700;
+    text-transform:uppercase; letter-spacing:.06em;
+    padding:.18rem .55rem; border-radius:100px;
+  }
+  .outlook-screen .copilot-tag.attention { background:#fde7e9; color:#a4262c; }
+  .outlook-screen .copilot-tag.schedule  { background:#ddf0f9; color:#005a9e; }
+  .outlook-screen .copilot-tag.fyi       { background:#ebebeb; color:#605e5c; }
+  .outlook-screen .copilot-tag.noise     { background:#f0f0f0; color:#8a8886; }
+  .outlook-screen .copilot-section-title {
+    font-size:.95rem; font-weight:600; color:#201f1e;
+  }
+  .outlook-screen .copilot-section-count {
+    margin-left:auto; font-size:.78rem; color:#8a8886;
+  }
+  .outlook-screen .summary-item {
+    padding:.7rem 0;
+    border-bottom:1px solid #faf9f8;
+  }
+  .outlook-screen .summary-item:last-child { border-bottom:none; }
+  .outlook-screen .item-sender {
+    font-size:.82rem; font-weight:600;
+    color:#323130; margin-bottom:.15rem;
+  }
+  .outlook-screen .item-sender .item-time {
+    font-weight:400; color:#8a8886;
+    font-size:.78rem; margin-left:.4rem;
+  }
+  .outlook-screen .item-subject {
+    font-size:.88rem; color:#201f1e;
+    margin-bottom:.35rem; font-weight:500;
+  }
+  .outlook-screen .item-summary {
+    font-size:.88rem; color:#484644;
+    line-height:1.55; max-width:none;
+  }
+  .outlook-screen .item-summary strong { color:#201f1e; font-weight:600; }
+  .outlook-screen .noise-list { list-style:none; padding:0; margin:0; }
+  .outlook-screen .noise-list li {
+    padding:.35rem 0; font-size:.85rem; color:#8a8886;
+  }
+  .outlook-screen .noise-list li strong { color:#605e5c; font-weight:500; }
+  .outlook-screen .copilot-footer {
+    padding:1rem 1.75rem 1.5rem;
+    border-top:1px solid #f3f2f1;
+    display:flex; align-items:center; gap:.65rem;
+    font-size:.75rem; color:#8a8886;
+  }
+  .outlook-screen .copilot-footer .accuracy { font-style:italic; }
+
+  .outlook-screen .layer-divider {
+    margin:2.5rem 0 1.5rem;
+    text-align:center;
+    position:relative;
+  }
+  .outlook-screen .layer-divider::before {
+    content:''; position:absolute; top:50%;
+    left:0; right:0; height:1px;
+    background:linear-gradient(90deg, transparent 0%, rgba(159,197,232,0.4) 50%, transparent 100%);
+  }
+  .outlook-screen .layer-divider-label {
+    display:inline-block; position:relative;
+    padding:.5rem 1.25rem;
+    background:rgba(15,15,30,0.6);
+    color:var(--bk-blue-bright);
+    font-size:.74rem; font-weight:600;
+    letter-spacing:.14em; text-transform:uppercase;
+    border-radius:100px;
+    border:1px solid rgba(159,197,232,0.25);
+    font-family:'Inter', sans-serif;
+  }
+
+  .outlook-screen .legend-panel {
+    background:white;
+    border-radius:12px;
+    box-shadow:0 1px 3px rgba(0,0,0,0.04), 0 12px 32px rgba(0,0,0,0.18);
+    overflow:hidden;
+    margin-bottom:1.5rem;
+  }
+  .outlook-screen .legend-header {
+    padding:1.25rem 1.75rem;
+    background:linear-gradient(135deg, #faf8f3 0%, #f5efe2 100%);
+    border-bottom:1px solid #e1dfdd;
+  }
+  .outlook-screen .legend-title {
+    font-size:1.15rem; font-weight:600;
+    color:#201f1e; margin-bottom:.25rem;
+    font-family:'Segoe UI', 'Inter', sans-serif;
+  }
+  .outlook-screen .legend-subtitle { font-size:.85rem; color:#605e5c; }
+  .outlook-screen .legend-grid {
+    padding:1.25rem 1.75rem;
+    display:grid; grid-template-columns:repeat(2, 1fr);
+    gap:.6rem 1.5rem;
+  }
+  .outlook-screen .legend-item {
+    display:flex; align-items:center; gap:.65rem;
+    font-size:.85rem; color:#323130;
+  }
+  .outlook-screen .legend-swatch {
+    width:14px; height:14px; border-radius:3px; flex-shrink:0;
+  }
+  .outlook-screen .swatch-yellow { background:#d4a83a; }
+  .outlook-screen .swatch-green  { background:#56956a; }
+  .outlook-screen .swatch-orange { background:#c66a3f; }
+  .outlook-screen .swatch-blue   { background:#6592bc; }
+  .outlook-screen .swatch-purple { background:#76507e; }
+  .outlook-screen .swatch-gray   { background:#7a7a8a; }
+  .outlook-screen .swatch-red    { background:#c83838; }
+  .outlook-screen .legend-item strong { font-weight:600; color:#201f1e; }
+  .outlook-screen .legend-item span { color:#605e5c; margin-left:.4rem; }
+
+  .outlook-screen .inbox-panel {
+    background:white;
+    border-radius:12px;
+    box-shadow:0 1px 3px rgba(0,0,0,0.04), 0 12px 32px rgba(0,0,0,0.18);
+    overflow:hidden;
+  }
+  .outlook-screen .inbox-header {
+    padding:1rem 1.5rem; background:#fafafa;
+    border-bottom:1px solid #e1dfdd;
+    display:flex; align-items:center; gap:.6rem;
+  }
+  .outlook-screen .inbox-icon {
+    width:22px; height:22px; background:#0078d4;
+    border-radius:4px;
+    display:flex; align-items:center; justify-content:center;
+    color:white; font-size:12px; flex-shrink:0;
+  }
+  .outlook-screen .inbox-title {
+    font-size:.95rem; font-weight:600; color:#201f1e;
+  }
+  .outlook-screen .inbox-meta {
+    margin-left:auto; font-size:.78rem; color:#8a8886;
+  }
+  .outlook-screen .email-row {
+    display:grid;
+    grid-template-columns:4px auto 180px 1fr 80px;
+    gap:0; align-items:center; padding:0;
+    border-bottom:1px solid #f3f2f1;
+    cursor:default; transition:background 0.1s;
+  }
+  .outlook-screen .email-row:hover { background:#f9f9f9; }
+  .outlook-screen .email-row:last-child { border-bottom:none; }
+  .outlook-screen .email-bar { height:100%; align-self:stretch; min-height:56px; }
+  .outlook-screen .email-bar.yellow { background:#d4a83a; }
+  .outlook-screen .email-bar.green  { background:#56956a; }
+  .outlook-screen .email-bar.orange { background:#c66a3f; }
+  .outlook-screen .email-bar.blue   { background:#6592bc; }
+  .outlook-screen .email-bar.purple { background:#76507e; }
+  .outlook-screen .email-bar.gray   { background:#7a7a8a; }
+  .outlook-screen .email-bar.red    { background:#c83838; }
+  .outlook-screen .email-flag { padding:.85rem 0 .85rem .85rem; }
+  .outlook-screen .flag-pill {
+    display:inline-block; width:10px; height:10px;
+    border-radius:50%; margin-right:.3rem;
+  }
+  .outlook-screen .flag-pill.blue { background:#6592bc; }
+  .outlook-screen .email-sender {
+    padding:.85rem .85rem .85rem .5rem;
+    font-size:.88rem; font-weight:600;
+    color:#201f1e; overflow:hidden;
+    text-overflow:ellipsis; white-space:nowrap;
+  }
+  .outlook-screen .email-subject {
+    padding:.85rem 1rem .85rem 0;
+    font-size:.85rem; color:#323130; overflow:hidden;
+  }
+  .outlook-screen .email-subject .subj-line {
+    font-weight:500; margin-bottom:.15rem;
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  }
+  .outlook-screen .email-subject .preview {
+    color:#8a8886; font-size:.8rem;
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  }
+  .outlook-screen .email-time {
+    padding:.85rem 1rem .85rem 0;
+    font-size:.78rem; color:#8a8886;
+    text-align:right; white-space:nowrap;
+  }
+
+  @media(max-width:768px) {
+    html { font-size:16px; }
+    section { padding:4rem 1.5rem; }
+    .stack-grid, .sop-grid, .approach-grid, .checkin-grid { grid-template-columns:1fr; }
+    .stack-foundation { flex-direction:column; align-items:flex-start; gap:.85rem; }
+    .stack-foundation .foundation-left { min-width:0; }
+    .week-list li { grid-template-columns:1fr; gap:.4rem; }
+    .hero .meta-row { gap:1.5rem; }
+    .phase-header { flex-direction:column; align-items:flex-start; }
+    .outlook-frame { padding:1rem; }
+    .outlook-screen .legend-grid { grid-template-columns:1fr; }
+    .outlook-screen .email-row { grid-template-columns:4px auto 1fr 70px; }
+    .outlook-screen .email-subject .preview { display:none; }
+  }
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <section class="hero">
-      <div class="hero-layout">
-        <div class="hero-copy">
-          <div class="eyebrow">Women’s Collegiate Gymnastics Association | Collegiate Gymnastics Growth Initiative</div>
-          <h1><span class="hero-title-top">Texas State University</span><span class="hero-title-line">Championship-Caliber Women’s</span><span class="hero-title-line">Gymnastics Program Launch</span></h1>
-          <p class="hero-kicker">Prepared for Texas State senior leadership as a recommendation from the Women’s Collegiate Gymnastics Association and the Collegiate Gymnastics Growth Initiative.</p>
-          <p>
-            Texas State has a first-mover opportunity in the most talent-rich state in the country. This roadmap shows the funding sequence required to convert that opportunity into a sustainable Division I launch: invest early in the head coach and first assistant, fund portal-driven recruiting before the first competition cycle, and phase facilities in a way that supports roster construction instead of delaying it.
-          </p>
-        </div>
-        <div class="hero-brand">
-          <img src="https://brand.txst.edu/.resources/1777586664289/txstprimary2colorlogo2025.svg" alt="Texas State University" />
-        </div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <aside class="draft-stamp" aria-label="Draft document">
+    <div class="stamp-eyebrow">
+      <span class="stamp-dot"></span>
+      Draft Document &middot; Working Copy
+    </div>
+    <div class="stamp-title">Solution &amp; Project Plan</div>
+    <div class="stamp-meta">
+      <span>Version 1</span>
+      <span class="stamp-meta-rule"></span>
+      <span>May 12, 2026</span>
+    </div>
+  </aside>
+  <span class="section-label">Email Engagement</span>
+  <h1>The Email <em>Solution</em></h1>
+  <p class="lead">A draft for your affirmation. A smart email system inside the Microsoft 365 you already have, designed around how each of you actually works. Melissa trains Jennifer to run it day to day; the SOPs make sure anyone can.</p>
+  <div class="meta-row">
+    <div class="meta-item">
+      <div class="meta-label">Prepared for</div>
+      <div class="meta-value">Jason Baker &amp; Kenneth Katz</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Prepared by</div>
+      <div class="meta-value">Brian &amp; Melissa Audia</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Trainer</div>
+      <div class="meta-value">Melissa Audia &middot; with Jennifer</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Status</div>
+      <div class="meta-value">Draft &middot; awaiting your reaction</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 01 WHAT THIS SOLVES -->
+<section id="context">
+  <span class="section-label">01 / What this solves</span>
+  <h2>One problem, three <em>specifics</em></h2>
+  <p>You both told us the same thing in different words: email is the thing eating the day. The pieces we are solving for, in your language:</p>
+  <ul style="margin-left:1.5rem; margin-bottom:1.5rem;">
+    <li style="margin-bottom:.7rem;"><strong style="color:#fff;">Jason</strong> reads emails and leaves them in the inbox until he has time to file or task them. That backlog grows. The 11 AM email start that worked years ago is gone, and the day starts in the inbox by default.</li>
+    <li style="margin-bottom:.7rem;"><strong style="color:#fff;">Kenneth</strong> is always in his email. He likes the color-coded system Jennifer uses for him. He works off Microsoft To Do (the task management tool in Microsoft 365, shown as "Tasks" in the new Outlook), but it does not pull email attachments through when he converts an email to a task. The current Jennifer-Kenneth system runs at roughly 30 percent efficiency by his own measure.</li>
+    <li><strong style="color:#fff;">Jennifer</strong> manages roughly 150 emails per day on each of your inboxes plus her own. The system she runs is one she invented over eighteen years. None of it is documented. If she is out, nothing happens.</li>
+  </ul>
+
+  <h3 style="font-family:var(--font-serif); font-weight:400; font-size:1.6rem; color:#fff; margin-top:2.5rem; margin-bottom:.6rem;">A three-pronged approach</h3>
+  <p>We solve this with three coordinated levers: training, technology, and intentionality.</p>
+
+  <div class="approach-grid">
+    <div class="approach-card">
+      <div class="approach-num">01</div>
+      <h4>Training</h4>
+      <p>Melissa Audia spends all the time she needs with Jennifer, training her on a new system and process. We are deliberately solving this with very little training or required behavioral change from Jason and Kenneth. We deliver a better system and ask them to change as little as possible.</p>
+    </div>
+    <div class="approach-card">
+      <div class="approach-num">02</div>
+      <h4>Technology</h4>
+      <p>The company already runs on Microsoft Office 365 and has access to its smart features. With a minimal upgrade to Copilot, the tech gives us leverage and accuracy, freeing Jennifer to focus on her highest and best uses. We add only one or two new tools.</p>
+    </div>
+    <div class="approach-card">
+      <div class="approach-num">03</div>
+      <h4>Intentionality</h4>
+      <p>A weekly 15-minute check-in, facilitated by Melissa: Jennifer with Jason, then Jennifer with Kenneth. We review what worked, what did not, and what to adjust. Patience matters. Small, tactical adjustments week over week dial this in to a system that fits.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 02 THE STACK -->
+<section id="stack">
+  <span class="section-label">02 / The stack</span>
+  <h2>What we are using, and <em>why</em></h2>
+  <p>Everything here lives inside Microsoft 365. Four of the pieces are existing M365 features we are turning on with intent. Copilot sits underneath them as the foundation, and is the one new license we add. Melissa trains Jennifer on all of it.</p>
+
+  <div class="stack-grid">
+    <div class="stack-card">
+      <span class="stack-tag">M365 native</span>
+      <h4>Outlook Categories &amp; Flags</h4>
+      <p>The color-coded layer Jennifer already uses for Kenneth. Melissa works with Jennifer to document the categories, lock the meanings, and apply them consistently. Free, built-in, already familiar.</p>
+    </div>
+    <div class="stack-card">
+      <span class="stack-tag">M365 native</span>
+      <h4>Microsoft To Do</h4>
+      <p>The task management tool in Microsoft 365 (shown as "Tasks" in the new Outlook). Kenneth already converts emails into tasks here. The drag-attachments-with-the-email workflow that fixes the attachment gap is documented in SOP-03 and has already been validated by Jennifer in your live Outlook setup. Remaining work is Melissa locking it into Jennifer's daily rhythm.</p>
+    </div>
+    <div class="stack-card">
+      <span class="stack-tag">M365 native</span>
+      <h4>Quick Steps</h4>
+      <p>One-click multi-action shortcuts in Outlook. After Melissa trains her, Jennifer can apply a category, move a thread, create a task, and reply, all in one click. Quietly removes minutes per email.</p>
+    </div>
+    <div class="stack-card">
+      <span class="stack-tag">M365 native</span>
+      <h4>Rules &amp; Search Folders</h4>
+      <p>Automated sorting before either of you touches mail. Newsletter mail to a folder. Internal-only mail surfaced. Vendor mail flagged. Less for Jennifer to triage manually.</p>
+    </div>
+
+    <div class="stack-foundation">
+      <div class="foundation-left">
+        <span class="stack-tag">Copilot</span>
+        <div class="foundation-label">The foundation underneath</div>
+        <h4>Microsoft 365 Copilot in Outlook</h4>
       </div>
-    </section>
-
-    <section class="summary">
-      <div class="summary-card">
-        <div class="label">Coaching Build-Out</div>
-        <div class="value">$460,000</div>
-        <div class="sub">Full-state staffing view once the head coach, head assistant, third assistant, and fourth assistant are all in place.</div>
-      </div>
-      <div class="summary-card">
-        <div class="label">Portal Recruiting Ramp</div>
-        <div class="value">$50K-$100K</div>
-        <div class="sub">No allocation in FY2025-26, then $50K in FY2026-27 and $100K in each of the next three years.</div>
-      </div>
-      <div class="summary-card">
-        <div class="label">Phased Facility Spend</div>
-        <div class="value">$4,500,000</div>
-        <div class="sub">Phased as $500K in FY2026-27, $3.5M in FY2027-28, and $500K in FY2028-29.</div>
-      </div>
-      <div class="summary-card">
-        <div class="label">Steady-State Operations</div>
-        <div class="value">$1,746,600</div>
-        <div class="sub">Steady-state annual operating view with the revised staffing structure.</div>
-      </div>
-    </section>
-
-    <section class="decision-strip">
-      <div class="decision-card">
-        <div class="label">Decision 1</div>
-        <p>Hire the head coach first, then bring in the head assistant early enough to build real recruiting momentum before the inaugural roster is locked.</p>
-      </div>
-      <div class="decision-card">
-        <div class="label">Decision 2</div>
-        <p>Fund recruiting above a normal startup level because the opening roster needs transfer portal athletes to balance class years and compete faster.</p>
-      </div>
-      <div class="decision-card">
-        <div class="label">Decision 3</div>
-        <p>Phase the facility investment without letting construction sequencing crowd out the coaching and roster moves that determine whether year one is credible.</p>
-      </div>
-    </section>
-
-    <h2 class="section-title">The Funding Sequence Matters More Than The Total</h2>
-    <p class="section-intro">
-      This roadmap is built to answer the executive question directly: what must be funded first, what can phase in later, and what sequence gives Texas State the best chance to launch with real competitive credibility.
-    </p>
-
-    <table class="roadmap">
-      <thead>
-        <tr>
-          <th>Recommendation</th>
-          <th>FY2025-26</th>
-          <th>FY2026-27</th>
-          <th>FY2027-28</th>
-          <th>FY2028-29</th>
-          <th>FY2029-30</th>
-          <th>Why This Matters</th>
-        </tr>
-      </thead>
-      <tbody>
-        
-            <tr>
-              <td class="item">Head coach</td>
-              <td class="num">$7,292</td>
-              <td class="num">$175,000</td>
-              <td class="num">$175,000</td>
-              <td class="num">$175,000</td>
-              <td class="num">$175,000</td>
-              <td class="note">FY2025-26 shows only a two-week prorated placeholder because the search begins June 1 and a full hire before July 1 is unlikely. In year one, the right head coach opens doors in talent acquisition, donor engagement, MediaTour, fundraising, and statewide credibility. Leadership should keep flexibility to stretch toward about $225K for the right unexpected opportunity.</td>
-            </tr>
-            
-            <tr>
-              <td class="item">Head assistant</td>
-              <td class="num">—</td>
-              <td class="num">$125,000</td>
-              <td class="num">$125,000</td>
-              <td class="num">$125,000</td>
-              <td class="num">$125,000</td>
-              <td class="note">Should be added in FY2026-27 as the lead recruiting and fundraising partner, especially given Texas club density and relationships. In year two, this role should also support MediaTour and external relationship-building.</td>
-            </tr>
-            
-            <tr>
-              <td class="item">Third assistant coach</td>
-              <td class="num">—</td>
-              <td class="num">—</td>
-              <td class="num">$100,000</td>
-              <td class="num">$100,000</td>
-              <td class="num">$100,000</td>
-              <td class="note">Adds daily training capacity and recruiting depth ahead of the first true competition phase.</td>
-            </tr>
-            
-            <tr>
-              <td class="item">Fourth assistant coach</td>
-              <td class="num">—</td>
-              <td class="num">—</td>
-              <td class="num">—</td>
-              <td class="num">$60,000</td>
-              <td class="num">$60,000</td>
-              <td class="note">Future-state staffing addition beginning in FY2028-29 as the program scales.</td>
-            </tr>
-            
-            <tr>
-              <td class="item">Director of Operations</td>
-              <td class="num">—</td>
-              <td class="num">—</td>
-              <td class="num">$55,000</td>
-              <td class="num">$55,000</td>
-              <td class="num">$55,000</td>
-              <td class="note">Operational backbone beginning in FY2027-28 as recruiting, travel, meet administration, and startup execution intensify.</td>
-            </tr>
-            
-            <tr>
-              <td class="item">Recruiting / portal strategy</td>
-              <td class="num">—</td>
-              <td class="num">$50,000</td>
-              <td class="num">$100,000</td>
-              <td class="num">$100,000</td>
-              <td class="num">$100,000</td>
-              <td class="note">No allocation is needed in FY2025-26. The opening roster must use the transfer portal to balance class years rather than overloading one freshman class, so recruiting rises to $50K in FY2026-27 and $100K in each of the next three years.</td>
-            </tr>
-            
-            <tr>
-              <td class="item">Practice facility investment</td>
-              <td class="num">—</td>
-              <td class="num">$500,000</td>
-              <td class="num">$3,500,000</td>
-              <td class="num">$500,000</td>
-              <td class="num">—</td>
-              <td class="note">Phased facility delivery keeps the project linear and presentation-ready while preserving the full $4.5M commitment.</td>
-            </tr>
-            
-            <tr>
-              <td class="item">Leotards</td>
-              <td class="num">—</td>
-              <td class="num">$20,000</td>
-              <td class="num">$40,000</td>
-              <td class="num">$40,000</td>
-              <td class="num">$30,000</td>
-              <td class="note">Leotards are a real competitive and brand category in women’s gymnastics, not a throwaway uniform line. Recommended phasing is $20K in FY2026-27, $40K in FY2027-28 and FY2028-29, then $30K in FY2029-30, with sponsorships or product credits helping offset cost over time.</td>
-            </tr>
-            
-            <tr>
-              <td class="item">NIL / rev share placeholder</td>
-              <td class="num">—</td>
-              <td class="num">—</td>
-              <td class="num">—</td>
-              <td class="num">—</td>
-              <td class="num">—</td>
-              <td class="note">Kept visible so future athlete compensation strategy has a designated planning line even if funding is zero today.</td>
-            </tr>
-            
-        <tr class="overall-total">
-          <td>Recommended Budget by Fiscal Year</td>
-          <td class="num">$7,292</td>
-          <td class="num">$870,000</td>
-          <td class="num">$4,095,000</td>
-          <td class="num">$1,155,000</td>
-          <td class="num">$645,000</td>
-          <td></td>
-        </tr>
-        
-      </tbody>
-    </table>
-
-    <h2 class="section-title">Operating Detail Supports The Recommendation</h2>
-    <p class="section-intro">
-      The line items below are not meant to compete with the roadmap; they exist to support it. Each category is aligned to the revised staffing structure, recruiting strategy, and support-capacity assumptions.
-    </p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Category</th>
-          <th>Projected Cost</th>
-          <th>Multiplier</th>
-          <th>Total</th>
-          <th>Notes</th>
-        </tr>
-      </thead>
-      <tbody>
-        
-            <tr class="section-row">
-              <td colspan="5">Coaching Salaries</td>
-            </tr>
-            
-
-                <tr>
-                  <td class="item">Head coach</td>
-                  <td class="num">$175,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$175,000</td>
-                  <td class="note">Annualized salary shown at $175,000. For FY2025-26 planning, the roadmap uses only a small two-week prorated placeholder before July 1, since a June 1 search start makes a full-month hire unlikely. Foundational market-entry hire with credibility across Texas clubs, media, and donors. Year one should include visible MediaTour and fundraising responsibility to establish the program early. The program should be willing to stretch toward roughly $225,000 if an unexpected elite candidate becomes available.</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Head assistant</td>
-                  <td class="num">$125,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$125,000</td>
-                  <td class="note">FY2026-27. Primary recruiting and fundraising partner; should be empowered to recruit aggressively across Texas. Year two should also include MediaTour support and external relationship-building as the launch profile grows.</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Third assistant coach</td>
-                  <td class="num">$100,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$100,000</td>
-                  <td class="note">FY2027-28. Needed for recruiting depth, daily training, and roster management entering the first competition cycle.</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Fourth assistant coach</td>
-                  <td class="num">$60,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$60,000</td>
-                  <td class="note">FY2028-29. Future-state addition as the program scales beyond launch.</td>
-                </tr>
-                
-
-            <tr class="subtotal-row">
-              <td colspan="3">Subtotal: Coaching Salaries</td>
-              <td class="num">$460,000</td>
-              <td></td>
-            </tr>
-            
-
-            <tr class="section-row">
-              <td colspan="5">Support Personnel Salaries</td>
-            </tr>
-            
-
-                <tr>
-                  <td class="item">Director of Operations</td>
-                  <td class="num">$55,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$55,000</td>
-                  <td class="note">FY2027-28. Added when the program shifts from startup planning into full operational execution.</td>
-                </tr>
-                
-
-            <tr class="subtotal-row">
-              <td colspan="3">Subtotal: Support Personnel Salaries</td>
-              <td class="num">$55,000</td>
-              <td></td>
-            </tr>
-            
-
-            <tr class="section-row">
-              <td colspan="5">Student Aid</td>
-            </tr>
-            
-
-                <tr>
-                  <td class="item">In state</td>
-                  <td class="num">$29,900</td>
-                  <td class="center">12</td>
-                  <td class="num total-col">$358,800</td>
-                  <td class="note">No internal discounts included, Can also likely supplement with academic scholarships - assuming 3+/year would qualify</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Out of state</td>
-                  <td class="num">$42,200</td>
-                  <td class="center">5</td>
-                  <td class="num total-col">$211,000</td>
-                  <td class="note">Assuming 1/3 of the athletes are out of state, is it different? (TXST could conceivably fill their roster with 80-90% Texans)</td>
-                </tr>
-                
-
-            <tr class="subtotal-row">
-              <td colspan="3">Subtotal: Student Aid</td>
-              <td class="num">$569,800</td>
-              <td></td>
-            </tr>
-            
-
-            <tr class="section-row">
-              <td colspan="5">Travel</td>
-            </tr>
-            
-
-                <tr>
-                  <td class="item">Transportation - flights, buses</td>
-                  <td class="num">$30,000</td>
-                  <td class="center">5</td>
-                  <td class="num total-col">$150,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Lodging</td>
-                  <td class="num">$6,000</td>
-                  <td class="center">5</td>
-                  <td class="num total-col">$30,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Per diem for athletes and staff</td>
-                  <td class="num">$2,500</td>
-                  <td class="center">5</td>
-                  <td class="num total-col">$12,500</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-            <tr class="subtotal-row">
-              <td colspan="3">Subtotal: Travel</td>
-              <td class="num">$192,500</td>
-              <td></td>
-            </tr>
-            
-
-            <tr class="section-row">
-              <td colspan="5">Equipment/uniforms</td>
-            </tr>
-            
-
-                <tr>
-                  <td class="item">Grips</td>
-                  <td class="num">$150</td>
-                  <td class="center">20</td>
-                  <td class="num total-col">$3,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Locker room tags</td>
-                  <td class="num">$20</td>
-                  <td class="center">10</td>
-                  <td class="num total-col">$200</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Floor music (licenses, cutting, etc)</td>
-                  <td class="num">$2,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$2,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">ipads for all incoming student athletes</td>
-                  <td class="num">$300</td>
-                  <td class="center">5</td>
-                  <td class="num total-col">$1,500</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Chalk</td>
-                  <td class="num">$400</td>
-                  <td class="center">4</td>
-                  <td class="num total-col">$1,600</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Choreographer</td>
-                  <td class="num">$300</td>
-                  <td class="center">20</td>
-                  <td class="num total-col">$6,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Practice gear</td>
-                  <td class="num">$2,000</td>
-                  <td class="center">5</td>
-                  <td class="num total-col">$10,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Warmups</td>
-                  <td class="num">$200</td>
-                  <td class="center">20</td>
-                  <td class="num total-col">$4,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Bras</td>
-                  <td class="num">$50</td>
-                  <td class="center">20</td>
-                  <td class="num total-col">$1,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Briefs</td>
-                  <td class="num">$30</td>
-                  <td class="center">20</td>
-                  <td class="num total-col">$600</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Manager Bag</td>
-                  <td class="num">$100</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$100</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Backpacks</td>
-                  <td class="num">$50</td>
-                  <td class="center">10</td>
-                  <td class="num total-col">$500</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Luggage Tags</td>
-                  <td class="num">$10</td>
-                  <td class="center">5</td>
-                  <td class="num total-col">$50</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Additional gear for coaches/staff</td>
-                  <td class="num">$200</td>
-                  <td class="center">4</td>
-                  <td class="num total-col">$800</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Slippers</td>
-                  <td class="num">$50</td>
-                  <td class="center">5</td>
-                  <td class="num total-col">$250</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Branded swag</td>
-                  <td class="num">$20,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$20,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Leotards</td>
-                  <td class="num">$30,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$30,000</td>
-                  <td class="note">Current out-year view shown here at $30,000. Recommended phasing is $20,000 in FY2026-27, $40,000 in FY2027-28 and FY2028-29, then $30,000 in FY2029-30. Leotards are a meaningful high-performance item in women’s gymnastics, and sponsorship from leotard companies or corporate partners could help subsidize this line.</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Equipment maintenance and repairs</td>
-                  <td class="num">$1,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$1,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Misc</td>
-                  <td class="num">$19,300</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$19,300</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-            <tr class="subtotal-row">
-              <td colspan="3">Subtotal: Equipment/uniforms</td>
-              <td class="num">$101,900</td>
-              <td></td>
-            </tr>
-            
-
-            <tr class="section-row">
-              <td colspan="5">Training and development</td>
-            </tr>
-            
-
-                <tr>
-                  <td class="item">Guest speakers, culture, staff development</td>
-                  <td class="num">$5,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$5,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Coaches clinics/certifications</td>
-                  <td class="num"></td>
-                  <td class="center"></td>
-                  <td class="num total-col">$0</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Insurance</td>
-                  <td class="num">$30,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$30,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Compliance</td>
-                  <td class="num"></td>
-                  <td class="center"></td>
-                  <td class="num total-col">$0</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-            <tr class="subtotal-row">
-              <td colspan="3">Subtotal: Training and development</td>
-              <td class="num">$35,000</td>
-              <td></td>
-            </tr>
-            
-
-            <tr class="section-row">
-              <td colspan="5">Facilities</td>
-            </tr>
-            
-
-                <tr>
-                  <td class="item">Repairs</td>
-                  <td class="num">$500</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$500</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Cleaning</td>
-                  <td class="num">$5,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$5,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Janitorial supplies</td>
-                  <td class="num">$200</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$200</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Equipment storage</td>
-                  <td class="num"></td>
-                  <td class="center"></td>
-                  <td class="num total-col">$0</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Utilities</td>
-                  <td class="num"></td>
-                  <td class="center"></td>
-                  <td class="num total-col">$0</td>
-                  <td class="note">?</td>
-                </tr>
-                
-
-            <tr class="subtotal-row">
-              <td colspan="3">Subtotal: Facilities</td>
-              <td class="num">$5,700</td>
-              <td></td>
-            </tr>
-            
-
-            <tr class="section-row">
-              <td colspan="5">Gameday/Meet Hosting</td>
-            </tr>
-            
-
-                <tr>
-                  <td class="item">Hair/Makeup</td>
-                  <td class="num"></td>
-                  <td class="center"></td>
-                  <td class="num total-col">$0</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Emcee/hype/energy</td>
-                  <td class="num">$1,000</td>
-                  <td class="center">5</td>
-                  <td class="num total-col">$5,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Experience enhancement</td>
-                  <td class="num">$20,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$20,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Judges</td>
-                  <td class="num">$6,900</td>
-                  <td class="center">5</td>
-                  <td class="num total-col">$34,500</td>
-                  <td class="note">5 meets - 4 dual, 1 quad (using data from UF)</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Prep and staffing</td>
-                  <td class="num">$2,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$2,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-            <tr class="subtotal-row">
-              <td colspan="3">Subtotal: Gameday/Meet Hosting</td>
-              <td class="num">$61,500</td>
-              <td></td>
-            </tr>
-            
-
-            <tr class="section-row">
-              <td colspan="5">Guarantees</td>
-            </tr>
-            
-
-            <tr class="subtotal-row">
-              <td colspan="3">Subtotal: Guarantees</td>
-              <td class="num">$0</td>
-              <td></td>
-            </tr>
-            
-
-            <tr class="section-row">
-              <td colspan="5">Marketing</td>
-            </tr>
-            
-
-                <tr>
-                  <td class="item">Posters</td>
-                  <td class="num">$500</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$500</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Billboards, wraps, public advertising</td>
-                  <td class="num">$20,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$20,000</td>
-                  <td class="note">Good ROI given location; worth exploring</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Ads</td>
-                  <td class="num">$2,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$2,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Gameday programs</td>
-                  <td class="num">$1,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$1,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Outsourcing graphics (recruiting, printing, mailing)</td>
-                  <td class="num">$2,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$2,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Social media Equipment</td>
-                  <td class="num">$2,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$2,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-            <tr class="subtotal-row">
-              <td colspan="3">Subtotal: Marketing</td>
-              <td class="num">$27,500</td>
-              <td></td>
-            </tr>
-            
-
-            <tr class="section-row">
-              <td colspan="5">Medical</td>
-            </tr>
-            
-
-                <tr>
-                  <td class="item">Treatment</td>
-                  <td class="num"></td>
-                  <td class="center"></td>
-                  <td class="num total-col">$0</td>
-                  <td class="note">Typically comes from another dept budget</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Medical supplies</td>
-                  <td class="num"></td>
-                  <td class="center"></td>
-                  <td class="num total-col">$0</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Injury prevention (massage, etc)</td>
-                  <td class="num"></td>
-                  <td class="center"></td>
-                  <td class="num total-col">$0</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Rehab (PT)</td>
-                  <td class="num"></td>
-                  <td class="center"></td>
-                  <td class="num total-col">$0</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-            <tr class="subtotal-row">
-              <td colspan="3">Subtotal: Medical</td>
-              <td class="num">$0</td>
-              <td></td>
-            </tr>
-            
-
-            <tr class="section-row">
-              <td colspan="5">Recruiting</td>
-            </tr>
-            
-
-                <tr>
-                  <td class="item">Golf cart(s)</td>
-                  <td class="num"></td>
-                  <td class="center"></td>
-                  <td class="num total-col">$0</td>
-                  <td class="note">Placeholder for hosted recruiting logistics if needed.</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Scouting software/subscriptions</td>
-                  <td class="num"></td>
-                  <td class="center"></td>
-                  <td class="num total-col">$0</td>
-                  <td class="note">Placeholder for recruiting operations tools.</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">On campus visit expenses</td>
-                  <td class="num">$25,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$25,000</td>
-                  <td class="note">Hosted visits, entertainment, and official visit support.</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Recruiting materials</td>
-                  <td class="num">$15,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$15,000</td>
-                  <td class="note">Graphics, digital content, mailers, and recruiting collateral.</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Staff travel</td>
-                  <td class="num">$60,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$60,000</td>
-                  <td class="note">Early spend to work the transfer portal, recruit nationally, and build relationships across Texas clubs.</td>
-                </tr>
-                
-
-            <tr class="subtotal-row">
-              <td colspan="3">Subtotal: Recruiting</td>
-              <td class="num">$100,000</td>
-              <td></td>
-            </tr>
-            
-
-            <tr class="section-row">
-              <td colspan="5">S-A Meals</td>
-            </tr>
-            
-
-                <tr>
-                  <td class="item">Team meals</td>
-                  <td class="num">$10,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$10,000</td>
-                  <td class="note">Other meals part of student aid</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Snacks for lounge</td>
-                  <td class="num">$10,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$10,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-            <tr class="subtotal-row">
-              <td colspan="3">Subtotal: S-A Meals</td>
-              <td class="num">$20,000</td>
-              <td></td>
-            </tr>
-            
-
-            <tr class="section-row">
-              <td colspan="5">Other</td>
-            </tr>
-            
-
-                <tr>
-                  <td class="item">Team awards</td>
-                  <td class="num">$2,500</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$2,500</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Senior gifts</td>
-                  <td class="num">$1,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$1,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">WCGA membership fees</td>
-                  <td class="num">$3,700</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$3,700</td>
-                  <td class="note">DI rate. Will change each year based on initiatives of the WCGA.</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Office supplies</td>
-                  <td class="num">$500</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$500</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Team building/retreat</td>
-                  <td class="num"></td>
-                  <td class="center"></td>
-                  <td class="num total-col">$0</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">NIL / rev share placeholder</td>
-                  <td class="num"></td>
-                  <td class="center"></td>
-                  <td class="num total-col">$0</td>
-                  <td class="note">Placeholder for future athlete compensation policy decisions.</td>
-                </tr>
-                
-
-            <tr class="subtotal-row">
-              <td colspan="3">Subtotal: Other</td>
-              <td class="num">$7,700</td>
-              <td></td>
-            </tr>
-            
-
-            <tr class="section-row">
-              <td colspan="5">Additional Support Staff and/or Graduate Assistant</td>
-            </tr>
-            
-
-                <tr>
-                  <td class="item">Strength Trainer</td>
-                  <td class="num">$55,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$55,000</td>
-                  <td class="note">Shared?</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Athletic Trainer</td>
-                  <td class="num">$55,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$55,000</td>
-                  <td class="note">Shared?</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Academic tutors</td>
-                  <td class="num"></td>
-                  <td class="center"></td>
-                  <td class="num total-col">$0</td>
-                  <td class="note">Shared?</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Nutritionist</td>
-                  <td class="num"></td>
-                  <td class="center"></td>
-                  <td class="num total-col">$0</td>
-                  <td class="note">Shared?</td>
-                </tr>
-                
-
-            <tr class="subtotal-row">
-              <td colspan="3">Subtotal: Additional Support Staff and/or Graduate Assistant</td>
-              <td class="num">$110,000</td>
-              <td></td>
-            </tr>
-            
-        <tr class="overall-total">
-          <td colspan="3">Total Annual Operating Budget</td>
-          <td class="num">$1,746,600</td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h2 class="section-title">One-Time Launch Costs Should Reinforce, Not Delay, The Launch Plan</h2>
-    <p class="section-intro">
-      Startup expenses remain important support documentation, but they should serve the launch strategy rather than define it. The facility line remains at the full recommended total and is shown as a phased spend.
-    </p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Launch / One-Time Category</th>
-          <th>Projected Cost</th>
-          <th>Multiplier</th>
-          <th>Total</th>
-          <th>Notes</th>
-        </tr>
-      </thead>
-      <tbody>
-        
-            <tr class="section-row">
-              <td colspan="5">Launch/One Time Expenses</td>
-            </tr>
-            
-
-                <tr>
-                  <td class="item">New Equipment</td>
-                  <td class="num">$500,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$500,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Gym Graphics</td>
-                  <td class="num">$5,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$5,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">In gym equipment (stair master, weights, medicine balls, kettle bells, etc.)</td>
-                  <td class="num">$10,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$10,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Portable speaker</td>
-                  <td class="num">$300</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$300</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">iPad or iPod for gym (floor music)</td>
-                  <td class="num">$350</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$350</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">ipads for staff</td>
-                  <td class="num">$350</td>
-                  <td class="center">4</td>
-                  <td class="num total-col">$1,400</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Chalk eaters</td>
-                  <td class="num">$2,700</td>
-                  <td class="center">2</td>
-                  <td class="num total-col">$5,400</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Industrial vacuum to clean gym</td>
-                  <td class="num">$5,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$5,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Locker room</td>
-                  <td class="num">$300,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$300,000</td>
-                  <td class="note">mid-tier with branding, team area, etc</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Facility renovation</td>
-                  <td class="num">$4,500,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$4,500,000</td>
-                  <td class="note">Phased across FY2026-27, FY2027-28, and FY2028-29.</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Leotards</td>
-                  <td class="num">$20,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$20,000</td>
-                  <td class="note">Initial year set at $20,000 for FY2026-27. Recommended phasing then rises to $40,000 in FY2027-28 and FY2028-29, and $50,000 in FY2029-30. Leotard partners often provide sponsorship support, product credit, or subsidies, and this category also creates strong corporate sponsorship opportunities around visible team branding.</td>
-                </tr>
-                
-
-                <tr>
-                  <td class="item">Meet Equipment</td>
-                  <td class="num">$85,000</td>
-                  <td class="center">1</td>
-                  <td class="num total-col">$85,000</td>
-                  <td class="note"></td>
-                </tr>
-                
-
-            <tr class="subtotal-row">
-              <td colspan="3">Subtotal: Launch/One Time Expenses</td>
-              <td class="num">$5,432,450</td>
-              <td></td>
-            </tr>
-            
-        <tr class="overall-total">
-          <td colspan="3">Total Launch / One-Time Budget</td>
-          <td class="num">$5,432,450</td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="callouts">
-      <div class="callout">
-        <strong>Coaching strategy:</strong> the head coach and head assistant are not routine staff lines. In Texas, with more than 200 clubs and a concentration
-        of elite programs, these are relationship, fundraising, recruiting, and brand-building investments.
-      </div>
-      <div class="callout">
-        <strong>Roster strategy:</strong> early recruiting needs to stay strong enough to use the transfer portal and balance class years over time rather than
-        exhausting scholarships in one freshman-heavy class.
+      <div class="foundation-right">
+        <p>Summarizes long threads with "Summary by Copilot." Catches you up on unread mail. Drafts replies with tone control. Copilot does the reading; you do the deciding. Three licenses (Jason, Kenneth, Jennifer) at about $30 per user per month. One tool, one experience, used the same way by both of you and by Jennifer. This is the new piece; everything above it runs on top of it.</p>
       </div>
     </div>
   </div>
+
+  <div class="faq-box">
+    <div class="faq-label">Frequently asked question</div>
+    <h4>If I use Microsoft Copilot, will my information be on the internet?</h4>
+    <p>No. Microsoft 365 Copilot is the enterprise version of the tool. It processes mail inside your Microsoft 365 tenant boundary, the same boundary your existing email already lives inside. Your data is not used to train Microsoft's models. The exact same security and compliance protections that cover your current email cover Copilot.</p>
+    <p>Before we turn it on, your Microsoft admin (or your IT partner) confirms a short list of tenant settings. We walk through those with them in Week 1, so the decision to enable Copilot is informed and reversible.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 03 SEE IT IN ACTION -->
+<section id="see-it">
+  <span class="section-label">03 / See it in action</span>
+  <h2>What this <em>actually looks like</em></h2>
+  <p>Words on a page are one thing. Here is the system in front of you. Top panel is a sample of Copilot's "Catch me up" running on a real morning's mail (mockup; content fabricated). Below it: Kenneth's inbox after Jennifer applies the color-coded triage on top. The two together are the system. You should be able to triage in three to five minutes per check window.</p>
+
+  <div class="outlook-frame">
+    <div class="frame-caption">
+      <span class="dot"></span>
+      Live mockup &middot; what Kenneth opens after Jennifer's morning triage
+    </div>
+
+    <div class="outlook-screen">
+
+      <div class="mockup-label">
+        <strong>Sample / mockup.</strong> This is an illustration of how Microsoft 365 Copilot's "Catch me up" summary works <em>together with</em> the color-coded categories Jennifer applies in your inbox. Top panel: what Copilot produces. Bottom panels: what your inbox looks like after Jennifer's color-coded triage. Content is fabricated for demonstration only.
+      </div>
+
+      <!-- COPILOT PANEL -->
+      <div class="copilot-panel">
+        <div class="copilot-header">
+          <div class="copilot-brand">
+            <div class="copilot-icon">&#10022;</div>
+            <div class="copilot-label">Microsoft 365 Copilot</div>
+          </div>
+          <div class="copilot-title">Catch me up</div>
+          <div class="copilot-subtitle">Summary of 23 unread messages from the past 16 hours</div>
+        </div>
+
+        <div class="copilot-body">
+
+          <div class="copilot-section">
+            <div class="copilot-section-header">
+              <span class="copilot-tag attention">Needs your attention</span>
+              <span class="copilot-section-title">Decisions or responses expected</span>
+              <span class="copilot-section-count">4 items</span>
+            </div>
+            <div class="summary-item">
+              <div class="item-sender">Daniel Whitfield &middot; Whitfield Capital <span class="item-time">7:42 AM today</span></div>
+              <div class="item-subject">Westside Shopping Center: revised LOI for review</div>
+              <div class="item-summary">Daniel sent a revised letter of intent for the Westside acquisition. <strong>Cap rate moved from 6.8% to 6.5%, financing contingency tightened to 30 days.</strong> He needs a yes or revised counter by end of day Friday to keep the deal alive.</div>
+            </div>
+            <div class="summary-item">
+              <div class="item-sender">Maria Chen &middot; Anchor Tenant Group <span class="item-time">11:14 PM last night</span></div>
+              <div class="item-subject">Lease renewal: H-E-B at Sharptown</div>
+              <div class="item-summary">H-E-B is asking for a 10-year renewal with two 5-year options at the current base rent plus 8% escalation. <strong>Their counter is below the market increase you discussed with Jason in March.</strong> Maria is asking for direction before her call with them Wednesday.</div>
+            </div>
+            <div class="summary-item">
+              <div class="item-sender">Robert Klein &middot; Goodman Foundation <span class="item-time">9:30 PM last night</span></div>
+              <div class="item-subject">Board materials for next meeting</div>
+              <div class="item-summary">Robert circulated draft agenda and supporting docs for the June board meeting. <strong>He is asking for your input on three items: the Q2 investment committee report, the proposed grant policy revision, and the executive director performance review framework.</strong> Comments needed by Friday.</div>
+            </div>
+            <div class="summary-item">
+              <div class="item-sender">Tracey Morrison &middot; Internal <span class="item-time">6:55 AM today</span></div>
+              <div class="item-subject">Q2 marketing budget: needs approval</div>
+              <div class="item-summary">Tracey is asking for sign-off on the Q2 marketing budget. <strong>Total is $42,500, up 12% over Q1, primarily from increased ICSC pre-show outreach.</strong></div>
+            </div>
+          </div>
+
+          <div class="copilot-section">
+            <div class="copilot-section-header">
+              <span class="copilot-tag schedule">Scheduling</span>
+              <span class="copilot-section-title">Calendar and meeting items</span>
+              <span class="copilot-section-count">3 items</span>
+            </div>
+            <div class="summary-item">
+              <div class="item-sender">Jennifer Ramirez <span class="item-time">8:15 AM today</span></div>
+              <div class="item-subject">Investor call: time change request</div>
+              <div class="item-summary">Sarah from Pinnacle wants to move tomorrow's 11 AM call to Tuesday at 2 PM. Jennifer flagged a conflict and is awaiting confirmation.</div>
+            </div>
+            <div class="summary-item">
+              <div class="item-sender">James Park &middot; Park Realty Partners <span class="item-time">2:11 PM yesterday</span></div>
+              <div class="item-subject">Lunch in Dallas next week</div>
+              <div class="item-summary">James is in Dallas Tuesday and Wednesday next week and would like to grab lunch to discuss a co-development opportunity in the DFW corridor.</div>
+            </div>
+            <div class="summary-item">
+              <div class="item-sender">ICSC Member Services <span class="item-time">4:30 PM yesterday</span></div>
+              <div class="item-subject">Las Vegas convention: booth registration deadline</div>
+              <div class="item-summary">Final booth selection for the Las Vegas convention closes Friday. Registration draft ready for review.</div>
+            </div>
+          </div>
+
+          <div class="copilot-section">
+            <div class="copilot-section-header">
+              <span class="copilot-tag fyi">FYI</span>
+              <span class="copilot-section-title">Informational, no action needed</span>
+              <span class="copilot-section-count">8 items</span>
+            </div>
+            <div class="summary-item">
+              <div class="item-sender">Tracey Morrison &middot; Internal <span class="item-time">3:42 PM yesterday</span></div>
+              <div class="item-subject">Sharptown Mall: April traffic counts</div>
+              <div class="item-summary">April foot traffic at Sharptown was up 7% over March and up 14% year over year. Anchor tenants in the food court drove most of the lift.</div>
+            </div>
+            <div class="summary-item">
+              <div class="item-sender">Nancy Park &middot; Internal <span class="item-time">5:18 PM yesterday</span></div>
+              <div class="item-subject">Out of office Thursday and Friday</div>
+              <div class="item-summary">Nancy will be out Thursday and Friday next week. Coverage arranged with Gary.</div>
+            </div>
+            <div class="summary-item">
+              <div class="item-sender">5 additional informational items</div>
+              <div class="item-summary" style="color:#8a8886; font-style:italic;">Industry newsletters, broker market updates, automated property alerts. None require action.</div>
+            </div>
+          </div>
+
+          <div class="copilot-section">
+            <div class="copilot-section-header">
+              <span class="copilot-tag noise">Filtered as noise</span>
+              <span class="copilot-section-title">Promotional, automated, or unsubscribed-from</span>
+              <span class="copilot-section-count">8 items</span>
+            </div>
+            <ul class="noise-list">
+              <li><strong>3 promotional emails</strong> from real estate technology vendors</li>
+              <li><strong>2 conference invitations</strong> for events outside Baker Katz's typical attendance</li>
+              <li><strong>2 LinkedIn notifications</strong> about connection activity</li>
+              <li><strong>1 mailing list update</strong> from a software trial you ended last year</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="copilot-footer">
+          <span style="color:#8a8886;">&#10022;</span>
+          <span class="accuracy">AI-generated content may be inaccurate. Review summaries before acting on them.</span>
+        </div>
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="layer-divider">
+        <span class="layer-divider-label">And here is the inbox with Jennifer's color codes applied</span>
+      </div>
+
+      <!-- COLOR LEGEND -->
+      <div class="legend-panel">
+        <div class="legend-header">
+          <div class="legend-title">Your color-coded categories</div>
+          <div class="legend-subtitle">Per SOP-02. Jennifer applies these to each email so you can scan the inbox in seconds.</div>
+        </div>
+        <div class="legend-grid">
+          <div class="legend-item"><div class="legend-swatch swatch-red"></div><div><strong>Red</strong><span>Urgent today &middot; open immediately</span></div></div>
+          <div class="legend-item"><div class="legend-swatch swatch-orange"></div><div><strong>Orange</strong><span>Action needed &middot; decide or respond</span></div></div>
+          <div class="legend-item"><div class="legend-swatch swatch-green"></div><div><strong>Green</strong><span>Scheduled &middot; on the calendar</span></div></div>
+          <div class="legend-item"><div class="legend-swatch swatch-yellow"></div><div><strong>Yellow</strong><span>Review only &middot; read and delete</span></div></div>
+          <div class="legend-item"><div class="legend-swatch swatch-blue"></div><div><strong>Blue</strong><span>Attachment already saved (paired flag)</span></div></div>
+          <div class="legend-item"><div class="legend-swatch swatch-purple"></div><div><strong>Purple</strong><span>Forwarded &middot; routed to the right person</span></div></div>
+          <div class="legend-item"><div class="legend-swatch swatch-gray"></div><div><strong>Gray</strong><span>Accounting &middot; handled by Nancy's team</span></div></div>
+        </div>
+      </div>
+
+      <!-- INBOX VIEW -->
+      <div class="inbox-panel">
+        <div class="inbox-header">
+          <div class="inbox-icon">&#9993;</div>
+          <div class="inbox-title">Inbox &middot; Kenneth Katz</div>
+          <div class="inbox-meta">After Jennifer's morning triage</div>
+        </div>
+
+        <div class="email-row">
+          <div class="email-bar red"></div>
+          <div class="email-flag"></div>
+          <div class="email-sender">Daniel Whitfield</div>
+          <div class="email-subject">
+            <div class="subj-line">Westside Shopping Center: revised LOI</div>
+            <div class="preview">Revised terms inside &middot; response needed by Friday</div>
+          </div>
+          <div class="email-time">7:42 AM</div>
+        </div>
+
+        <div class="email-row">
+          <div class="email-bar orange"></div>
+          <div class="email-flag"><span class="flag-pill blue"></span></div>
+          <div class="email-sender">Maria Chen</div>
+          <div class="email-subject">
+            <div class="subj-line">Lease renewal: H-E-B at Sharptown</div>
+            <div class="preview">10-year + two 5-year options at base + 8% &middot; attachment saved</div>
+          </div>
+          <div class="email-time">11:14 PM</div>
+        </div>
+
+        <div class="email-row">
+          <div class="email-bar orange"></div>
+          <div class="email-flag"><span class="flag-pill blue"></span></div>
+          <div class="email-sender">Robert Klein</div>
+          <div class="email-subject">
+            <div class="subj-line">Board materials: June meeting</div>
+            <div class="preview">Three items need your input by Friday &middot; attachment saved</div>
+          </div>
+          <div class="email-time">9:30 PM</div>
+        </div>
+
+        <div class="email-row">
+          <div class="email-bar orange"></div>
+          <div class="email-flag"></div>
+          <div class="email-sender">Tracey Morrison</div>
+          <div class="email-subject">
+            <div class="subj-line">Q2 marketing budget &middot; needs approval</div>
+            <div class="preview">$42,500 total &middot; 12% over Q1 &middot; breakdown attached</div>
+          </div>
+          <div class="email-time">6:55 AM</div>
+        </div>
+
+        <div class="email-row">
+          <div class="email-bar green"></div>
+          <div class="email-flag"></div>
+          <div class="email-sender">Jennifer Ramirez</div>
+          <div class="email-subject">
+            <div class="subj-line">Investor call: rescheduling proposed</div>
+            <div class="preview">Moved to Tuesday 2 PM &middot; calendar updated</div>
+          </div>
+          <div class="email-time">8:15 AM</div>
+        </div>
+
+        <div class="email-row">
+          <div class="email-bar green"></div>
+          <div class="email-flag"></div>
+          <div class="email-sender">James Park</div>
+          <div class="email-subject">
+            <div class="subj-line">Lunch in Dallas next week</div>
+            <div class="preview">Tuesday lunch booked at Pappas Bros &middot; 12:30 PM</div>
+          </div>
+          <div class="email-time">2:11 PM</div>
+        </div>
+
+        <div class="email-row">
+          <div class="email-bar yellow"></div>
+          <div class="email-flag"></div>
+          <div class="email-sender">Tracey Morrison</div>
+          <div class="email-subject">
+            <div class="subj-line">Sharptown April traffic counts</div>
+            <div class="preview">Up 7% MoM, 14% YoY &middot; for your review</div>
+          </div>
+          <div class="email-time">3:42 PM</div>
+        </div>
+
+        <div class="email-row">
+          <div class="email-bar yellow"></div>
+          <div class="email-flag"></div>
+          <div class="email-sender">National Retail Federation</div>
+          <div class="email-subject">
+            <div class="subj-line">Q1 2026 retail real estate report</div>
+            <div class="preview">Strip center occupancy at all-time high</div>
+          </div>
+          <div class="email-time">10:02 AM</div>
+        </div>
+
+        <div class="email-row">
+          <div class="email-bar gray"></div>
+          <div class="email-flag"></div>
+          <div class="email-sender">First Texas Bank &middot; Statements</div>
+          <div class="email-subject">
+            <div class="subj-line">April operating account statement</div>
+            <div class="preview">Forwarded to Nancy &middot; accounting will reconcile</div>
+          </div>
+          <div class="email-time">2:00 AM</div>
+        </div>
+
+        <div class="email-row">
+          <div class="email-bar purple"></div>
+          <div class="email-flag"></div>
+          <div class="email-sender">Sarah Mitchell &middot; Real Property Inc</div>
+          <div class="email-subject">
+            <div class="subj-line">Property inquiry: 4500 Voss Road</div>
+            <div class="preview">Forwarded to Gary (property manager) for first response</div>
+          </div>
+          <div class="email-time">1:35 PM</div>
+        </div>
+
+        <div class="email-row">
+          <div class="email-bar yellow"></div>
+          <div class="email-flag"></div>
+          <div class="email-sender">Nancy Park</div>
+          <div class="email-subject">
+            <div class="subj-line">Out of office Thursday and Friday</div>
+            <div class="preview">Coverage arranged with Gary &middot; routine items flagged for Monday</div>
+          </div>
+          <div class="email-time">5:18 PM</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="frame-footer-note">
+      <strong>How to read this together.</strong> Copilot does the summarizing (top panel). Jennifer adds the color coding on top so the inbox itself is pre-decisioned when you open it. <strong>Red</strong> is what to open first. <strong>Orange</strong> needs your decision today or this week. <strong>Green</strong> is already scheduled, no action needed. <strong>Yellow</strong> is for your information only, archive when done. <strong>Blue dots</strong> on a row mean the attachment is already saved in your usual location, so you do not need to download it again. <strong>Purple</strong> and <strong>Gray</strong> have been routed to the right person on your team; you do not need to act unless something gets escalated back to you. The combination of the Copilot summary plus the color-coded inbox is the system. Jason's inbox follows the same pattern with fewer colors, since he leaves more in place to file at end of day.
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 04 HOW IT WORKS FOR JASON -->
+<section id="jason">
+  <span class="section-label">04 / How it works for Jason</span>
+  <h2>For <em>Jason</em>: leave it, but with a safety net</h2>
+
+  <div class="principal-flow gold-accent">
+    <div class="who">Jason's daily flow</div>
+    <h3>Read, leave, file later. The pattern stays.</h3>
+    <div class="one-liner">No email before 11 AM. Two protected half-days a week. Your inbox is allowed to be messy.</div>
+
+    <ol class="flow-steps">
+      <li><strong>Before 11 AM:</strong> nothing. Phone plugged in away from you in the morning. Inbox is closed.<p>Jennifer is already on your inbox during her morning window (the same window she runs for Kenneth). She runs Copilot's "Catch me up" on your overnight mail and prepares a summary at the top of the inbox so it is ready for you when you open. If something is genuinely urgent before 11 AM, she texts or walks over. Otherwise it waits.</p></li>
+      <li><strong>11 AM open:</strong> Jennifer's pre-summary is waiting for you.<p>Instead of reading 30 emails from the morning, you see at a glance what needs your response now, what can wait, and what is noise. You scan the summary, pick the urgent items, and open only those. For the rest, you have two paths: let them sit until end-of-day, or brief Jennifer in two minutes on what she can handle for you (respond on your behalf with you cc'd, send to your task list, delete, or file). Either path keeps your inbox moving without keeping you in it.</p></li>
+      <li><strong>During the day:</strong> read and leave. No pressure to file in the moment.<p>Your existing pattern of "read it, leave it, come back later" stays. Jennifer continues to run Copilot's "Catch me up" on your inbox at her afternoon and late-afternoon windows (the same times she runs Kenneth's), so when you check in between, what you see has already been pre-summarized.</p></li>
+      <li><strong>End of day:</strong> 15-minute "file or task" block.<p>Anything you flagged or wanted to come back to gets filed, converted to a task in Microsoft To Do, or deleted. Copilot drafts replies on the ones you want to respond to. You or Jennifer edits and sends, depending on whether the response goes from you directly or on your behalf.</p></li>
+      <li><strong>Two half-days a week:</strong> protected blocks for BD and relationships.<p>Standing calendar holds. Jennifer guards them. Email stays closed during those windows.</p></li>
+    </ol>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 05 HOW IT WORKS FOR KENNETH -->
+<section id="kenneth">
+  <span class="section-label">05 / How it works for Kenneth</span>
+  <h2>For <em>Kenneth</em>: in sync, in color, in Microsoft To Do</h2>
+
+  <div class="principal-flow">
+    <div class="who">Kenneth's daily flow</div>
+    <h3>Two to three check windows. The color system you love. Microsoft To Do absorbing attachments now.</h3>
+    <div class="one-liner">Jennifer pre-clears in advance of each window. You see only what needs you, color-coded, with attachments saved.</div>
+
+    <ol class="flow-steps">
+      <li><strong>Three check windows per day:</strong> mid-morning, after lunch, late afternoon.<p>You agree on the three windows. Jennifer pre-clears your inbox in the 15 minutes before each one. Outside those windows, you stay out.</p></li>
+      <li><strong>What you see when you open:</strong> a categorized, pre-decisioned inbox.<p>Jennifer has already deleted noise, scheduled what could be scheduled, saved attachments, and color-coded what remains using your existing system (informational, scheduling-handled, attachment-saved, action-needed). Copilot has summarized any long threads at the top.</p></li>
+      <li><strong>What you do:</strong> work the colors.<p>Informational items: review, delete. Action items: respond, or drag into Microsoft To Do. Attachment-saved items: archive (it is already filed). Long threads: read the Copilot summary first.</p></li>
+      <li><strong>When you drag an email into Microsoft To Do:</strong> attachments come with it (now).<p>We are fixing the gap you raised. The SOP documents three methods to convert an email-with-attachment into a task without losing the file. You will not have to go back to the original email anymore.</p></li>
+      <li><strong>Off-window behavior:</strong> trust the system, do not check.<p>The relief of "shipping away at the list" gets replaced by the relief of knowing the list is being shipped at on your behalf. Melissa coaches this through the weekly check-ins; it takes a few weeks.</p></li>
+    </ol>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 06 THE SOPs -->
+<section id="sops">
+  <span class="section-label">06 / Standard Operating Procedures</span>
+  <h2>The system, <em>written down</em></h2>
+  <p>Six total SOPs by the end of the engagement, authored by Melissa. Four foundational SOPs are written and finalized in Week 1 (three for email, plus one calendar guardrail powered by a Copilot agent), then Melissa trains Jennifer on all four in Week 2. Two further SOPs (Quick Steps and Rules, then Jennifer's daily rhythm and escalation matrix) get built and deployed in Weeks 6 and 7. Jennifer runs them today; if she is out tomorrow or someone steps in next year, the SOPs are the operating manual. Each one is standalone, step-by-step, and visual.</p>
+
+  <div class="sop-grid">
+    <a class="sop-tile" href="sops/sop-01-m365-copilot-email-triage.html">
+      <div class="sop-num">01</div>
+      <h4>Microsoft 365 Copilot for email triage and summarization</h4>
+      <p>How to summarize threads, catch up on overnight mail, and draft replies with Copilot inside Outlook.</p>
+    </a>
+    <a class="sop-tile" href="sops/sop-02-kenneth-color-coded-system.html">
+      <div class="sop-num">02</div>
+      <h4>Kenneth's color-coded email categories</h4>
+      <p>The exact colors, what each means, when to apply them, and what Kenneth does when he sees each one.</p>
+    </a>
+    <a class="sop-tile" href="sops/sop-03-email-to-microsoft-to-do.html">
+      <div class="sop-num">03</div>
+      <h4>Email to Microsoft To Do (with attachments)</h4>
+      <p>Three reliable methods for converting an email into a Microsoft To Do task without losing the attachment.</p>
+    </a>
+    <a class="sop-tile" href="sops/sop-04-location-aware-scheduling-buffer.html">
+      <div class="sop-num">04</div>
+      <h4>Location-aware scheduling buffer (Copilot agent)</h4>
+      <p>A location-aware Copilot agent watches the calendar. Whenever Jason or Kenneth is out of the office, the hour immediately after their return stays unbookable. No landing from a trip and walking straight into a meeting; the schedule gives them a runway back in.</p>
+    </a>
+  </div>
+
+  <p style="margin-top:2rem;">These four are written and finalized by Melissa in Week 1, with Jennifer trained on them in Week 2. SOP-05 (Quick Steps and Rules: the Outlook automation layer) and SOP-06 (Jennifer's daily rhythm and escalation matrix) get built and deployed in Weeks 6 and 7. Six SOPs total.</p>
+</section>
+
+<hr class="divider">
+
+<!-- 07 ROLLOUT -->
+<section id="rollout">
+  <span class="section-label">07 / Rollout</span>
+  <h2>Four <em>phases</em>, week by week</h2>
+  <p>From your go-ahead. Same shape as any good rollout: configure, launch, scale, lock. Week 1 is the week of May 18. Go-live is Week 3, the week of June 1. The first Friday check-in is Friday, June 5.</p>
+
+  <div class="checkin-callout">
+    <div class="who">Standing rhythm &middot; every Friday morning, Weeks 3 to 9</div>
+    <h3>The weekly check-in</h3>
+    <div class="one-liner">Two 15-minute sessions, back to back, facilitated by Melissa. The point is small, tactical adjustments. Patience matters.</div>
+    <div class="checkin-grid">
+      <div class="checkin-slot">
+        <div class="slot-time">Friday AM &middot; 15 minutes</div>
+        <div class="slot-who">Jennifer &amp; Jason</div>
+        <div class="slot-fac">Facilitated by Melissa</div>
+      </div>
+      <div class="checkin-slot">
+        <div class="slot-time">Friday AM &middot; 15 minutes</div>
+        <div class="slot-who">Jennifer &amp; Kenneth</div>
+        <div class="slot-fac">Facilitated by Melissa</div>
+      </div>
+    </div>
+    <p class="agenda"><strong style="color:#fff;">Always the same four questions:</strong> What went well this week? What went wrong? What do we need to adjust? How is it going overall?</p>
+    <p class="closing-line">No new initiatives, no rebuilds, no overcorrecting. Just small tactical adjustments week over week until the system fits how each of you actually works.</p>
+  </div>
+
+  <div class="phase">
+    <div class="phase-header">
+      <div>
+        <div class="phase-num">01</div>
+        <div class="phase-name">Configure: <em>Melissa builds the SOPs and trains Jennifer</em></div>
+      </div>
+      <div class="phase-window">Weeks 1 to 2 &middot; May 18 + May 25</div>
+    </div>
+    <ul class="week-list">
+      <li>
+        <div class="week-num">Week 1<small>Week of May 18</small></div>
+        <div class="week-content">
+          <h5>Licenses, admin review, and all four foundational SOPs finalized</h5>
+          <p>Procure three Microsoft 365 Copilot licenses through your M365 admin: one for Jason, one for Kenneth, one for Jennifer (about $30 per user per month each). Jennifer needs her own because she runs Copilot on your inboxes through delegate access; Copilot licensing is per-user, not per-mailbox. Melissa walks through tenant settings with your admin or IT partner to confirm the security posture is acceptable. By the end of Week 1, Melissa has authored and finalized all four foundational SOPs: SOP-01 (Copilot triage), SOP-02 (color-coded categories, captured in Jennifer's own words), SOP-03 (email to Microsoft To Do with attachments), and SOP-04 (location-aware Copilot scheduling agent). Kenneth's Outlook client version and exact drag-attachment behavior get confirmed.</p>
+          <span class="deliverable">Three Copilot licenses live + Four SOPs finalized</span>
+        </div>
+      </li>
+      <li>
+        <div class="week-num">Week 2<small>Week of May 25</small></div>
+        <div class="week-content">
+          <h5>Jennifer fully trained on the four SOPs</h5>
+          <p>Melissa runs hands-on training with Jennifer on a real day of her mail: Copilot triage, the color system as documented, the three drag-attachment methods, and the calendar-buffer agent. By end of week, Jennifer is operating the new system fluently in dry-run mode on her own inbox before it touches Jason or Kenneth.</p>
+          <span class="deliverable">Jennifer fully trained on all four SOPs</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-header">
+      <div>
+        <div class="phase-num">02</div>
+        <div class="phase-name">Launch: <em>both principals live, weekly Friday check-ins begin</em></div>
+      </div>
+      <div class="phase-window">Weeks 3 to 5 &middot; June 1 onward</div>
+    </div>
+    <ul class="week-list">
+      <li>
+        <div class="week-num">Week 3<small>Week of June 1</small></div>
+        <div class="week-content">
+          <h5>Go-live Monday June 1 &middot; first weekly check-in Friday, June 5</h5>
+          <p>Monday, June 1: the system goes live for both of you. Kenneth's three-window-per-day rhythm starts; Jennifer pre-clears in advance of each window using SOP-01 and SOP-02. The drag-attachment workflow is in daily use. Copilot summarizes long threads at the top of his inbox. Jason resumes the 11 AM email start, with Jennifer's Copilot pre-summary waiting; end-of-day "file or task" block on the calendar; two BD half-days locked. <strong style="color:#fff;">Friday, June 5 is the first weekly check-in.</strong> Melissa facilitates the two 15-minute sessions back to back. We capture what is working, what is friction, and the small adjustments for Week 4.</p>
+          <span class="deliverable">System live &middot; first Friday check-in: June 5</span>
+        </div>
+      </li>
+      <li>
+        <div class="week-num">Week 4<small>Week of June 8</small></div>
+        <div class="week-content">
+          <h5>First tuning week &middot; weekly check-in for adjustments Friday, June 12</h5>
+          <p>Adjustments from the June 5 check-in get implemented Monday. Jennifer continues operating both inboxes on the new rhythm. Melissa observes and supports. <strong style="color:#fff;">Friday, June 12 is the weekly check-in for adjustments:</strong> 15 minutes Jennifer + Jason, 15 minutes Jennifer + Kenneth, Melissa facilitating. Tactical adjustments only, no overhauls.</p>
+          <span class="deliverable">Weekly check-in for adjustments: June 12</span>
+        </div>
+      </li>
+      <li>
+        <div class="week-num">Week 5<small>Week of June 15</small></div>
+        <div class="week-content">
+          <h5>Second tuning week &middot; weekly check-in Friday, June 19</h5>
+          <p>By now the daily pattern feels familiar. We look for the friction that only shows up after the new becomes the normal. <strong style="color:#fff;">Friday, June 19 is the weekly check-in.</strong> Same format: two 15-minute sessions, Melissa facilitating.</p>
+          <span class="deliverable">Weekly check-in: June 19</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-header">
+      <div>
+        <div class="phase-num">03</div>
+        <div class="phase-name">Scale: <em>second-layer SOPs and automation</em></div>
+      </div>
+      <div class="phase-window">Weeks 6 to 8 &middot; June 22 onward</div>
+    </div>
+    <ul class="week-list">
+      <li>
+        <div class="week-num">Week 6<small>Week of June 22</small></div>
+        <div class="week-content">
+          <h5>Melissa builds SOP-05 and SOP-06 &middot; weekly check-in Friday, June 26</h5>
+          <p>Melissa authors SOP-05 (Quick Steps and Rules: the Outlook automation layer) and SOP-06 (Jennifer's daily rhythm playbook and escalation matrix). SOP-05 configures per-principal Quick Steps (one-click multi-action shortcuts) and Outlook Rules for noise filtering. SOP-06 documents Jennifer's daily operating rhythm and the escalation matrix: what Jennifer handles solo, what she texts, what she escalates. The "if Jennifer is out" question gets a real answer. Both SOPs reviewed with Jennifer in draft. Friday check-in continues.</p>
+          <span class="deliverable">SOP-05 and SOP-06 drafted</span>
+        </div>
+      </li>
+      <li>
+        <div class="week-num">Week 7<small>Week of June 29</small></div>
+        <div class="week-content">
+          <h5>SOP-05 and SOP-06 deployed &middot; Melissa trains Jennifer &middot; weekly check-in Friday, July 3</h5>
+          <p>Both new SOPs go live. Melissa runs hands-on training with Jennifer on the Quick Steps and Rules configuration, then walks her through the daily rhythm playbook and escalation matrix on a real day of her mail. Jennifer's manual triage time drops by an estimated 20 to 30 percent once Quick Steps and Rules are running. All six SOPs are now live and Jennifer is trained on all of them.</p>
+          <span class="deliverable">All six SOPs live + Jennifer fully trained</span>
+        </div>
+      </li>
+      <li>
+        <div class="week-num">Week 8<small>Week of July 6</small></div>
+        <div class="week-content">
+          <h5>Copilot deeper use cases &middot; weekly check-in Friday, July 10</h5>
+          <p>With all six SOPs running, Melissa walks Jennifer through "Coaching by Copilot" for outbound (tone and clarity) and Copilot on calendar mail (auto-decline conflicts, propose times). The Copilot layer expands from triage-only to actively drafting on your behalf.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-header">
+      <div>
+        <div class="phase-num">04</div>
+        <div class="phase-name">Lock: <em>measure and hand off</em></div>
+      </div>
+      <div class="phase-window">Week 9 &middot; July 13</div>
+    </div>
+    <ul class="week-list">
+      <li>
+        <div class="week-num">Week 9<small>Week of July 13</small></div>
+        <div class="week-content">
+          <h5>Formal review: is this working? Did we achieve our goals?</h5>
+          <p>A short, honest review of the engagement against your stated goals, plus recommended next steps. All six SOPs are fully implemented and active:</p>
+          <ul style="list-style:none; margin:1rem 0 1.25rem 0; padding:0;">
+            <li style="padding:.55rem 0 .55rem 2rem; position:relative; font-size:.94rem; color:var(--bk-text); border-bottom:1px solid rgba(159,197,232,0.06);"><span style="position:absolute; left:0; top:.55rem; font-family:var(--font-serif); font-size:1rem; color:var(--bk-gold); font-weight:500;">01</span><strong style="color:#fff;">SOP-01</strong> &middot; Microsoft 365 Copilot for email triage and summarization</li>
+            <li style="padding:.55rem 0 .55rem 2rem; position:relative; font-size:.94rem; color:var(--bk-text); border-bottom:1px solid rgba(159,197,232,0.06);"><span style="position:absolute; left:0; top:.55rem; font-family:var(--font-serif); font-size:1rem; color:var(--bk-gold); font-weight:500;">02</span><strong style="color:#fff;">SOP-02</strong> &middot; Kenneth's color-coded email categories</li>
+            <li style="padding:.55rem 0 .55rem 2rem; position:relative; font-size:.94rem; color:var(--bk-text); border-bottom:1px solid rgba(159,197,232,0.06);"><span style="position:absolute; left:0; top:.55rem; font-family:var(--font-serif); font-size:1rem; color:var(--bk-gold); font-weight:500;">03</span><strong style="color:#fff;">SOP-03</strong> &middot; Email to Microsoft To Do (with attachments)</li>
+            <li style="padding:.55rem 0 .55rem 2rem; position:relative; font-size:.94rem; color:var(--bk-text); border-bottom:1px solid rgba(159,197,232,0.06);"><span style="position:absolute; left:0; top:.55rem; font-family:var(--font-serif); font-size:1rem; color:var(--bk-gold); font-weight:500;">04</span><strong style="color:#fff;">SOP-04</strong> &middot; Location-aware scheduling buffer (Copilot agent)</li>
+            <li style="padding:.55rem 0 .55rem 2rem; position:relative; font-size:.94rem; color:var(--bk-text); border-bottom:1px solid rgba(159,197,232,0.06);"><span style="position:absolute; left:0; top:.55rem; font-family:var(--font-serif); font-size:1rem; color:var(--bk-gold); font-weight:500;">05</span><strong style="color:#fff;">SOP-05</strong> &middot; Quick Steps and Rules (Outlook automation layer)</li>
+            <li style="padding:.55rem 0 .55rem 2rem; position:relative; font-size:.94rem; color:var(--bk-text);"><span style="position:absolute; left:0; top:.55rem; font-family:var(--font-serif); font-size:1rem; color:var(--bk-gold); font-weight:500;">06</span><strong style="color:#fff;">SOP-06</strong> &middot; Jennifer's daily rhythm playbook and escalation matrix</li>
+          </ul>
+          <p><strong style="color:#fff;">Recommended next steps and further considerations.</strong> Jennifer, Jason, and Kenneth continue the weekly Friday check-in cadence to refine the system. Melissa transitions to a monthly check-in with Jennifer plus a quarterly review with all three, should Baker Katz decide to continue the engagement. The goal is continuous improvement: small adjustments, sustained over time, so the system gets better the longer it runs.</p>
+          <span class="deliverable">Formal review + Six SOPs active + Standing rhythm defined</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 08 WHAT WE NEED -->
+<section id="ask">
+  <span class="section-label">08 / What we need from you</span>
+  <h2>Two asks, then we run</h2>
+
+  <div class="ask-block">
+    <h3>Light touch, very specific.</h3>
+    <p style="font-size:1rem; color:var(--bk-muted);">You said: bring us a draft, react to it, sign off, and let us run.</p>
+    <ol>
+      <li>Approve three Microsoft 365 Copilot licenses (one each for you, one for Jennifer) at about $30 per user per month.</li>
+      <li>Commit to the weekly 15-minute check-in with Jennifer on Friday mornings, starting June 5. Melissa facilitates.</li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  AUDIA Consulting &middot; Prepared for Baker Katz &middot; Draft &middot; May 12, 2026 &middot; Confidential: for Baker Katz leadership only
+</footer>
+
 </body>
 </html>
